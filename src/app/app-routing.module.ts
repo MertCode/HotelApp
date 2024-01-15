@@ -1,12 +1,14 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BookingCalendarComponent } from './pages/booking-calendar/booking-calendar.component';
 import { BookingListComponent } from './pages/booking-list/booking-list.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { LoginComponent } from './pages/login/login.component';
+import { NewBookingComponent } from './pages/new-booking/new-booking.component';
 import { RoomsComponent } from './pages/rooms/rooms.component';
+import { UsersComponent } from './pages/users/users.component';
 
+/** Routes for the application. Defines the mapping between URLs and components. */
 const routes: Routes = [
   {
     path: '',
@@ -31,15 +33,15 @@ const routes: Routes = [
       },
       {
         path: 'newBooking',
-        component: BookingListComponent,
+        component: NewBookingComponent,
       },
       {
         path: 'bookings',
         component: BookingListComponent,
       },
       {
-        path: 'booking-calendar',
-        component: BookingCalendarComponent,
+        path: 'users',
+        component: UsersComponent,
       },
     ],
   },

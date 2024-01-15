@@ -30,14 +30,24 @@
         <div class="login">
           <form>
             <label for="chk" aria-hidden="true">Login</label>
-            <input type="email" name="email" placeholder="Email" required="" />
+            <input
+              type="email"
+              [(ngModel)]="loginObj.phone"
+              name="email"
+              placeholder="Email"
+              required=""
+            />
             <input
               type="password"
+              (ngModel)]="loginObj.password"
               name="pswd"
               placeholder="Password"
               required=""
             />
-            <button>Login</button>
+            <div class="inputBx">
+              <input type="button" value="signIn" (click)="onLogin()" />
+              <button>Login</button>
+            </div>
           </form>
         </div>
       </div>
