@@ -36,7 +36,12 @@
                     >
                       Edit
                     </button>
-                    <button class="btn btn-sm btn-danger">Remove</button>
+                    <button
+                      class="btn btn-sm btn-danger"
+                      (click)="onDelete(cust.userId)"
+                    >
+                      Remove
+                    </button>
                   </td>
                 </tr>
               </tbody>

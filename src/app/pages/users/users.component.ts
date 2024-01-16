@@ -30,7 +30,7 @@ export class UsersComponent implements OnInit {
   onSaveUser() {
     this.roomSrv.addUpdateUser(this.userObj).subscribe((res: any) => {
       if (res.result) {
-        alert('User successfully created!');
+        alert('User successfully updated!');
         this.getUsers();
       } else {
         alert(res.message);
@@ -39,6 +39,21 @@ export class UsersComponent implements OnInit {
   }
 
   onEdit(data: any) {
-    this.userObj = data;
+    const strObj = JSON.stringify(data);
+    this.userObj = JSON.parse(strObj);
+  }
+
+  onDelete(id: number) {
+    const isDelete = confirm('Are you sure you want to delete this user?');
+    if (isDelete) {
+      this.roomSrv.deleteUser(id).subscribe((res: any) => {
+        if (res.result) {
+          this.getUsers();
+          alert('User successfully deleted!');
+        } else {
+          alert(res.message);
+        }
+      });
+    }
   }
 }
