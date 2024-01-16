@@ -1,1 +1,30 @@
-<p>rooms works!</p>
+<div class="row">
+  <div class="col12">
+    <table>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Sr no</th>
+            <th>Room Name</th>
+            <th>AC</th>
+            <th>Capacity</th>
+            <th>Active</th>
+            <th>Tariff</th>
+            <th>Extention Nr</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let room of roomList; let sr = index">
+            <td>{{ sr + 1 }}</td>
+            <td>{{ room.roomName }}</td>
+            <td>{{ room.isAcAvailable }}</td>
+            <td>{{ room.roomCapacity }}</td>
+            <td>{{ room.roomisActive }}</td>
+            <td>{{ room.roomTariff }}</td>
+            <td>{{ room.roomExtentionNo }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </table>
+  </div>
+</div>
