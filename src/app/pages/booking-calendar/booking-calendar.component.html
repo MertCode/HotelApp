@@ -1,1 +1,32 @@
-<p>booking-calendar works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+</head>
+<body>
+    <div class="month">
+        <ul>
+            <button id="prev" (click)="prevMonth()" class="prev"><</button>
+            <button id="next" (click)="nextMonth()" class="next">></button>
+            <li id="current-month">January<br><span style="font-size:18px">2024</span></li>
+        </ul>
+    </div>
+    
+    <ul class="weekdays">
+        <li>Mo</li>
+        <li>Tu</li>
+        <li>We</li>
+        <li>Th</li>
+        <li>Fr</li>
+        <li>Sa</li>
+        <li>Su</li>
+    </ul>
+    
+    <ul class="days" id="days-container">
+        <!-- Days will be populated dynamically using TypeScript -->
+    </ul>
+    
+</body>
+</html>
