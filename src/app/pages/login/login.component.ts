@@ -9,7 +9,7 @@ import { RoomService } from 'src/app/service/room.service';
 })
 export class LoginComponent {
   loginObj: any = {
-    phone: '',
+    login: '',
     password: '',
   };
   constructor(private roomSrv: RoomService, private router: Router) {}
@@ -28,3 +28,4 @@ export class LoginComponent {
     );
   }
 }
+
