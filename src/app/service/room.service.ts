@@ -19,9 +19,11 @@ export class RoomService {
   }
 
   saveUpdateRoom(obj: any) {
-    return this.http.post(this.apiEndPoint + 'SaveUpdateRoom', obj);
+    return this.http.post(this.apiEndPoint + 'AddUpdateBulkRooms', obj);
   }
   deleteRoom(id: any) {
-    return this.http.delete(this.apiEndPoint + 'DeleteRoomByRoomId=' + id);
+    return this.http.delete(
+      this.apiEndPoint + 'DeleteRoomByRoomId?roomId=' + id
+    );
   }
 }
