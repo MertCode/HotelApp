@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookingCalendarComponent } from './pages/booking-calendar/booking-calendar.component';
 import { BookingListComponent } from './pages/booking-list/booking-list.component';
+import { CustomerComponent } from './pages/customer/customer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -46,6 +47,10 @@ const routes: Routes = [
       {
         path: 'booking-calendar',
         component: BookingCalendarComponent,
+      },
+      {
+        path: 'customer',
+        component: CustomerComponent,
       },
     ],
   },

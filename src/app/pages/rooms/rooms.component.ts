@@ -33,12 +33,13 @@ export class RoomsComponent implements OnInit {
     this.roomSrv.saveUpdateRoom(this.roomList).subscribe((Res: any) => {
       if (Res.result) {
         alert('Data successfully updated!');
+        this.getAllRooms();
       } else {
         alert(Res.message);
       }
     });
   }
-  AddNEwRoom() {
+  AddNewRoom() {
     const obj = {
       roomId: 0,
       roomName: '',

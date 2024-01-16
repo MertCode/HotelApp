@@ -26,4 +26,19 @@ export class RoomService {
       this.apiEndPoint + 'DeleteRoomByRoomId?roomId=' + id
     );
   }
+  getAllCustomers() {
+    return this.http.get(this.apiEndPoint + 'GetAllCustomers');
+  }
+
+  getAllUsers() {
+    return this.http.get(this.apiEndPoint + 'GetAllUsers');
+  }
+  addUpdateUser(obj: any) {
+    return this.http.post(this.apiEndPoint + 'AddUpdateUser', obj);
+  }
+  deleteUser(id: any) {
+    return this.http.delete(
+      this.apiEndPoint + 'DeleteUserByUserId?userId=' + id
+    );
+  }
 }

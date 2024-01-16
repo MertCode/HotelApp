@@ -13,6 +13,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { NewBookingComponent } from './pages/new-booking/new-booking.component';
 import { RoomsComponent } from './pages/rooms/rooms.component';
 import { UsersComponent } from './pages/users/users.component';
+import { CustomerComponent } from './pages/customer/customer.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { UsersComponent } from './pages/users/users.component';
     NewBookingComponent,
     RoomsComponent,
     UsersComponent,
+    CustomerComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
