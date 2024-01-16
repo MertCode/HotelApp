@@ -8,7 +8,6 @@ import { NewBookingComponent } from './pages/new-booking/new-booking.component';
 import { RoomsComponent } from './pages/rooms/rooms.component';
 import { UsersComponent } from './pages/users/users.component';
 
-/** Routes for the application. Defines the mapping between URLs and components. */
 const routes: Routes = [
   {
     path: '',

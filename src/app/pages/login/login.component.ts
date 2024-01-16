@@ -12,7 +12,6 @@ export class LoginComponent {
     phone: '',
     password: '',
   };
-
   constructor(private roomSrv: RoomService, private router: Router) {}
 
   onLogin() {
