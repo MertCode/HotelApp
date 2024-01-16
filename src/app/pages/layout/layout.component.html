@@ -1,1 +1,38 @@
-<p>layout works!</p>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/dashboard">Home</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mynavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/newBooking">New Booking</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/bookings">Booking List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/rooms">Rooms</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/booking-calendar"
+            >Booking Calendar</a
+          >
+        </li>
+      </ul>
+      <form class="d-flex">
+        <h6>{{ loggedUserData?.userName }}</h6>
+        <button class="btn btn-primary" type="button" (click)="onLogOff()">
+          Logout
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

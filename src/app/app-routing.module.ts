@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BookingCalendarComponent } from './pages/booking-calendar/booking-calendar.component';
 import { BookingListComponent } from './pages/booking-list/booking-list.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LayoutComponent } from './pages/layout/layout.component';
@@ -41,6 +42,10 @@ const routes: Routes = [
       {
         path: 'users',
         component: UsersComponent,
+      },
+      {
+        path: 'booking-calendar',
+        component: BookingCalendarComponent,
       },
     ],
   },
