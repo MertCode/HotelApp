@@ -1,65 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Booking-Calendar</title>
-</head>
-<body>
-
-
-
-
-  <div class="row">
-    <div class="date">
-      <input
-        type="month" 
-        (ngModelChange)="onDateChange($event)"
-        [(ngModel)]="selectedDate"
-        
-      />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking-Calendar</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="date">
+        <input
+          type="month"
+          (ngModelChange)="onDateChange($event)"
+          [(ngModel)]="selectedDate"
+        />
+      </div>
     </div>
-  </div>
-  <table class="table">
-    <tr>
-      <td
-        class="days"
-        style="width: 4%"
-        placement="top"
-        data-container="body"
-        ngbTooltip="2222"
-      >
-        Room
-      </td>
-      <td *ngFor="let day of dayInMonthList" class="days">
-        {{ day }}
-      </td>
-    </tr>
-    <tr *ngFor="let room of allRooms" class="days">
-      <td>{{ room.roomName }}</td>
-      <td *ngFor="let day of dayInMonthList; let i = index" class="days">
-        <div
-          *ngIf="checkIfBooked(day, room.roomName)"
-          [ngClass]="checkIfBooked(day, room.roomName) ? 'booked' : ''"
+    <table class="table">
+      <tr>
+        <td
+          class="days"
+          style="width: 4%"
+          placement="top"
+          data-container="body"
+          ngbTooltip="2222"
         >
-          <i
-            class="fa fa-bed white"
-            aria-hidden="true"
-            title="{{ checkIfBooked(day, room.roomName).name }}"
-          ></i>
-        </div>
-        <div class="keykey"
-          *ngIf="!checkIfBooked(day, room.roomName)"
-          [ngClass]="checkIfBooked(day, room.roomName) ? 'booked' : ''"
-        >
-          <i class="fa fa-key handicon enable 11" aria-hidden="true"></i>
-        </div>
-      </td>
-    </tr>
-  </table>
-  
-
-
-
-</body>
+          Room
+        </td>
+        <td *ngFor="let day of dayInMonthList" class="days">
+          {{ day }}
+        </td>
+      </tr>
+      <tr *ngFor="let room of allRooms" class="days">
+        <td>{{ room.roomName }}</td>
+        <td *ngFor="let day of dayInMonthList; let i = index" class="days">
+          <div
+            *ngIf="checkIfBooked(day, room.roomName)"
+            [ngClass]="checkIfBooked(day, room.roomName) ? 'booked' : ''"
+          >
+            <i
+              class="fa fa-bed white"
+              aria-hidden="true"
+              title="{{ checkIfBooked(day, room.roomName).name }}"
+            ></i>
+          </div>
+          <div
+            class="keykey"
+            *ngIf="!checkIfBooked(day, room.roomName)"
+            [ngClass]="checkIfBooked(day, room.roomName) ? 'booked' : ''"
+          >
+            <i class="fa fa-key handicon enable 11" aria-hidden="true"></i>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>
