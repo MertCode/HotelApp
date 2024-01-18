@@ -1,32 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendar</title>
-</head>
-<body>
-    <div class="month">
-        <ul>
-            <button id="prev" (click)="prevMonth()" class="prev"><</button>
-            <button id="next" (click)="nextMonth()" class="next">></button>
-            <li id="current-month">January<br><span style="font-size:18px">2024</span></li>
-        </ul>
-    </div>
-    
-    <ul class="weekdays">
-        <li>Mo</li>
-        <li>Tu</li>
-        <li>We</li>
-        <li>Th</li>
-        <li>Fr</li>
-        <li>Sa</li>
-        <li>Su</li>
-    </ul>
-    
-    <ul class="days" id="days-container">
-        <!-- Days will be populated dynamically using TypeScript -->
-    </ul>
-    
-</body>
-</html>
+<div class="row">
+  <div class="col-12 text-end">
+    <input
+      type="date"
+      (ngModelChange)="onDateChange($event)"
+      [(ngModel)]="selectedDate"
+    />
+  </div>
+</div>
+<table class="table">
+  <tr>
+    <td
+      class="days"
+      style="width: 4%"
+      placement="top"
+      data-container="body"
+      ngbTooltip="2222"
+    >
+      Room
+    </td>
+    <td *ngFor="let day of dayInMonthList" class="days">
+      {{ day }}
+    </td>
+  </tr>
+  <tr *ngFor="let room of allRooms" class="days">
+    <td>{{ room.roomName }}</td>
+    <td *ngFor="let day of dayInMonthList; let i = index" class="days">
+      <div
+        *ngIf="checkIfBooked(day, room.roomName)"
+        [ngClass]="checkIfBooked(day, room.roomName) ? 'booked' : ''"
+      >
+        <i
+          class="fa fa-bed white"
+          aria-hidden="true"
+          title="{{ checkIfBooked(day, room.roomName).name }}"
+        ></i>
+      </div>
+      <div
+        *ngIf="!checkIfBooked(day, room.roomName)"
+        [ngClass]="checkIfBooked(day, room.roomName) ? 'booked' : ''"
+      >
+        <i class="fa fa-key handicon enable 11" aria-hidden="true"></i>
+      </div>
+    </td>
+  </tr>
+</table>

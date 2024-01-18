@@ -1,47 +1,83 @@
 import { Component, OnInit } from '@angular/core';
+import { RoomService } from 'src/app/service/room.service';
 
 @Component({
   selector: 'app-booking-calendar',
   templateUrl: './booking-calendar.component.html',
-  styleUrls: ['./booking-calendar.component.css']
+  styleUrls: ['./booking-calendar.component.css'],
 })
 export class BookingCalendarComponent implements OnInit {
-  months: string[] = [
-      "January", "February", "March", "April",
-      "May", "June", "July", "August",
-      "September", "October", "November", "December"
-  ];
-  currentMonthIndex: number = 0;
+  selectedDate: Date = new Date();
+  dayInMonthList: number[] = [];
+  allRooms: any[] = [];
+  bookingList: any[] = [];
 
-  ngOnInit() {
-    this.updateCalendar();
+  constructor(private roomSrv: RoomService) {}
+
+  ngOnInit(): void {
+    this.getAllRooms();
+    this.populateMonthDays(this.selectedDate);
+    this.GetBookingsByMonth(this.selectedDate.getMonth() + 1);
   }
 
-  updateCalendar(): void {
-    const currentMonthElement = document.getElementById('current-month');
-    const daysContainer = document.getElementById('days-container');
-    if (currentMonthElement && daysContainer) {
-      const currentMonth: string = this.months[this.currentMonthIndex];
-      currentMonthElement.innerHTML = `${currentMonth}<br><span style="font-size:18px">2024</span>`;
+  getAllRooms() {
+    this.roomSrv.getAllRooms().subscribe((res: any) => {
+      this.allRooms = res.data;
+    });
+  }
+  GetBookingsByMonth(month: number) {
+    this.roomSrv.GetBookingsByMonth(month).subscribe((res: any) => {
+      this.bookingList = res.data;
+    });
+  }
 
-      // Clear previous days
-      daysContainer.innerHTML = "";
-      // Populate days for the current month
-      for (let day: number = 1; day <= 31; day++) {
-        const dayElement: HTMLLIElement = document.createElement('li');
-        dayElement.textContent = day.toString();
-        daysContainer.appendChild(dayElement);
+  isDateGone(day: number) {
+    const currentDay = new Date().getDate();
+    const currDay = Number(currentDay.toString().slice(-2));
+    if (
+      day >= currDay &&
+      this.selectedDate.getMonth() + 1 >= new Date().getMonth()
+    ) {
+      return true;
+    } else {
+      if (this.selectedDate.getMonth() + 1 > new Date().getMonth()) {
+        return true;
+      } else {
+        return false;
       }
     }
   }
 
-  nextMonth(): void {
-    this.currentMonthIndex = (this.currentMonthIndex + 1) % this.months.length;
-    this.updateCalendar();
+  checkIfBooked(day: number, RoomNo: number) {
+    debugger;
+    const isbooked = this.bookingList.find(
+      (m) => m.roomName === RoomNo && m.monthDay === day
+    );
+    if (isbooked !== undefined) {
+      return isbooked;
+    } else {
+      return false;
+    }
   }
 
-  prevMonth(): void {
-    this.currentMonthIndex = (this.currentMonthIndex - 1 + this.months.length) % this.months.length;
-    this.updateCalendar();
+  onDateChange(date: Date) {
+    debugger;
+    this.populateMonthDays(date);
+    this.GetBookingsByMonth(new Date(date).getMonth() + 1);
+  }
+
+  daysInMonth(month: number, year: number) {
+    return new Date(year, month, 0).getDate();
+  }
+
+  populateMonthDays(newDate: Date) {
+    let date = new Date(newDate);
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    console.log();
+    this.dayInMonthList = [];
+    for (let index = 1; index <= this.daysInMonth(month, year); index++) {
+      this.dayInMonthList.push(index);
+    }
   }
 }

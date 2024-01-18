@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { retry } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -17,19 +16,25 @@ export class RoomService {
   getAllRooms() {
     return this.http.get(this.apiEndPoint + 'GetAllRooms');
   }
+  GetBookingsByMonth(month: number) {
+    return this.http.get(
+      this.apiEndPoint + 'GetBookingsByMonth?month=' + month
+    );
+  }
 
   saveUpdateRoom(obj: any) {
     return this.http.post(this.apiEndPoint + 'AddUpdateBulkRooms', obj);
   }
+
   deleteRoom(id: any) {
     return this.http.delete(
       this.apiEndPoint + 'DeleteRoomByRoomId?roomId=' + id
     );
   }
+
   getAllCustomers() {
     return this.http.get(this.apiEndPoint + 'GetAllCustomers');
   }
-
   getAllUsers() {
     return this.http.get(this.apiEndPoint + 'GetAllUsers');
   }
@@ -40,5 +45,9 @@ export class RoomService {
     return this.http.delete(
       this.apiEndPoint + 'DeleteUserByUserId?userId=' + id
     );
+  }
+
+  createBooking(obj: any) {
+    return this.http.post(this.apiEndPoint + 'bookroom', obj);
   }
 }
