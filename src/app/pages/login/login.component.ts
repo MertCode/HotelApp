@@ -26,10 +26,10 @@ export class LoginComponent {
           localStorage.setItem('hotelUser', JSON.stringify(res.data));
           this.router.navigateByUrl('/dashboard');
         } else {
-          alert('Check User Credentials');
+          this.toaster.error('Check User Credentials');
         }
       },
-      (error) => {}
+      (error: any) => {}
     );
   }
 }

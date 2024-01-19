@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+* {
+  font-family: Poppins, sans-serif;
+}
+
 h6 {
   color: white;
   margin-top: 0.35cm;
@@ -12,4 +18,8 @@ img {
 
 .home {
   padding-left: 0.5cm;
+}
+
+.imglogo {
+  padding-left: 0.2cm;
 }

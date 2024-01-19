@@ -38,10 +38,10 @@ export class RoomsComponent implements OnInit {
   saveRooms() {
     this.roomSrv.saveUpdateRoom(this.roomList).subscribe((Res: any) => {
       if (Res.result) {
-        alert('Data successfully updated!');
+        this.toaster.success('Data successfully updated!');
         this.getAllRooms();
       } else {
-        alert(Res.message);
+        this.toaster.error(Res.message);
       }
     });
   }
@@ -60,10 +60,10 @@ export class RoomsComponent implements OnInit {
   onDelete(id: number) {
     this.roomSrv.deleteRoom(id).subscribe((res: any) => {
       if (res.result) {
-        alert('Room successfully deleted!');
+        this.toaster.success('Room successfully deleted!');
         this.getAllRooms();
       } else {
-        alert(res.message);
+        this.toaster.error(res.message);
       }
     });
   }

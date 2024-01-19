@@ -25,5 +25,6 @@ export class LayoutComponent {
     localStorage.removeItem('hotelUser');
     this.loggedUserData = undefined;
     this.router.navigateByUrl('/login');
+    this.toaster.success('Logged out successfully');
   }
 }

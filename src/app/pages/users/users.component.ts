@@ -24,8 +24,6 @@ export class UsersComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.getUsers();
-    this.toaster.success('Customer List', 'Success');
-
     throw new Error('Method not implemented.');
   }
 
@@ -38,10 +36,10 @@ export class UsersComponent implements OnInit {
   onSaveUser() {
     this.roomSrv.addUpdateUser(this.userObj).subscribe((res: any) => {
       if (res.result) {
-        alert('User successfully updated!');
+        this.toaster.success('Employee list successfully updated!');
         this.getUsers();
       } else {
-        alert(res.message);
+        this.toaster.error(res.message);
       }
     });
   }
@@ -57,9 +55,9 @@ export class UsersComponent implements OnInit {
       this.roomSrv.deleteUser(id).subscribe((res: any) => {
         if (res.result) {
           this.getUsers();
-          alert('User successfully deleted!');
+          this.toaster.success('User successfully deleted!');
         } else {
-          alert(res.message);
+          this.toaster.error(res.message);
         }
       });
     }

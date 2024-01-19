@@ -64,12 +64,13 @@ export class NewBookingComponent implements OnInit {
   onSaveBooking() {
     this.roomSrv.createBooking(this.bookingObj).subscribe((res: any) => {
       if (res.result) {
-        this.toaster.success('Customer List', 'Success');
+        this.toaster.success('Booking created successfully');
         this.router.navigate(['/booking-calendar']);
       } else {
-        alert(res.message);
+        this.toaster.error(res.message);
         console.log(res);
       }
     });
   }
 }
+
