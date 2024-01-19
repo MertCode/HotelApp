@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { RoomService } from 'src/app/service/room.service';
 
 @Component({
@@ -12,7 +13,11 @@ export class LoginComponent {
     login: '',
     password: '',
   };
-  constructor(private roomSrv: RoomService, private router: Router) {}
+  constructor(
+    private roomSrv: RoomService,
+    private router: Router,
+    private toaster: ToastrService
+  ) {}
 
   onLogin() {
     this.roomSrv.login(this.loginObj).subscribe(
@@ -28,4 +33,3 @@ export class LoginComponent {
     );
   }
 }
-

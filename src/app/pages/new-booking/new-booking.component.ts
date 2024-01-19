@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { RoomService } from 'src/app/service/room.service';
 
 @Component({
@@ -36,7 +37,11 @@ export class NewBookingComponent implements OnInit {
 
   roomList: any[] = [];
 
-  constructor(private roomSrv: RoomService, private router: Router) {}
+  constructor(
+    private roomSrv: RoomService,
+    private router: Router,
+    private toaster: ToastrService
+  ) {}
   ngOnInit(): void {
     this.loadRooms();
   }
@@ -59,7 +64,7 @@ export class NewBookingComponent implements OnInit {
   onSaveBooking() {
     this.roomSrv.createBooking(this.bookingObj).subscribe((res: any) => {
       if (res.result) {
-        alert('Booking successfully created!');
+        this.toaster.success('Customer List', 'Success');
         this.router.navigate(['/booking-calendar']);
       } else {
         alert(res.message);

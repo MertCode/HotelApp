@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { RoomService } from 'src/app/service/room.service';
 
 @Component({
@@ -17,7 +19,11 @@ export class RoomsComponent implements OnInit {
     roomTariff: 0,
     extensionNo: '',
   };
-  constructor(private roomSrv: RoomService) {}
+  constructor(
+    private roomSrv: RoomService,
+    private router: Router,
+    private toaster: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.getAllRooms();

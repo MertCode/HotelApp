@@ -12,7 +12,6 @@ export class CustomerComponent implements OnInit {
   constructor(private roomSrv: RoomService, private toaster: ToastrService) {}
   ngOnInit(): void {
     this.getCustomer();
-    this.toaster.success('Customer List', 'Success');
   }
   getCustomer() {
     this.roomSrv.getAllCustomers().subscribe((res: any) => {

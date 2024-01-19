@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { RoomService } from 'src/app/service/room.service';
 
@@ -16,7 +17,11 @@ export class UsersComponent implements OnInit {
     role: '',
   };
 
-  constructor(private roomSrv: RoomService, private toaster: ToastrService) {}
+  constructor(
+    private roomSrv: RoomService,
+    private toaster: ToastrService,
+    private router: Router
+  ) {}
   ngOnInit(): void {
     this.getUsers();
     this.toaster.success('Customer List', 'Success');
