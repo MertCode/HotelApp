@@ -1,3 +1,15 @@
 h6 {
   color: white;
+  margin-top: 0.35cm;
+  margin-right: 0.6cm;
+}
+
+img {
+  width: 70px;
+  border-radius: 10px;
+  border: 1px solid #494954;
+}
+
+.home {
+  padding-left: 0.5cm;
 }

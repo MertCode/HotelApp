@@ -24,7 +24,7 @@ export class NewBookingComponent implements OnInit {
     createdDate: new Date(),
     bookingRate: 0,
     naration: '',
-    createdBy: 0,
+    createdBy: '1',
     hotelBookingDetails: [],
   };
 
@@ -68,6 +68,7 @@ export class NewBookingComponent implements OnInit {
         this.router.navigate(['/booking-calendar']);
       } else {
         alert(res.message);
+        console.log(res);
       }
     });
   }
