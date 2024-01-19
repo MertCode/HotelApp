@@ -23,3 +23,17 @@ img {
 .imglogo {
   padding-left: 0.2cm;
 }
+
+@media (max-width: 991px) {
+  .home {
+    padding-left: 0;
+  }
+
+  .imglogo {
+    padding-left: 0;
+  }
+
+  h6 {
+    margin-right: 0;
+  }
+}

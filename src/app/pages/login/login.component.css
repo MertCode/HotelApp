@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -62,7 +65,6 @@ label {
   cursor: text;
   padding-right: 5px;
   transition: 0.2s;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 input {
@@ -114,7 +116,6 @@ button {
   padding-right: 20px;
   font-size: 15px;
   cursor: pointer;
-  font-family: "Figtree", sans-serif;
 }
 
 button:hover {
@@ -123,8 +124,6 @@ button:hover {
 }
 
 h1 {
-  font-family: "Be Vietnam Pro", sans-serif;
-  font-family: "Figtree", sans-serif;
   color: #fff;
   margin-bottom: 20px;
 }
@@ -133,7 +132,6 @@ a {
   color: #bbbbbb;
   text-decoration: none;
   font-size: 12px;
-  font-family: "Figtree", sans-serif;
 }
 
 a:hover {

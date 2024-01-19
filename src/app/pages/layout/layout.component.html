@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <div class="imglogo">
       <img
@@ -17,7 +17,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link" routerLink="/newBooking">New Booking</a>
         </li>
@@ -40,7 +40,7 @@
         </li>
       </ul>
       <form class="d-flex">
-        <h6>{{ loggedUserData?.userName }}</h6>
+        <h6 class="d-none d-lg-block">{{ loggedUserData?.userName }}</h6>
         <button class="btn btn-primary" type="button" (click)="onLogOff()">
           Logout
         </button>
