@@ -1,56 +1,55 @@
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Login</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link
-	  href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@700&family=Figtree:wght@700&display=swap"
-	  rel="stylesheet"
-	/>
-	<link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-  </head>
-  <body>
-	<div class="container">
-	  <div class="pic2"></div>
-	  <img
-		src="https://store-images.s-microsoft.com/image/apps.28471.14139628370441750.28b315c6-e587-4ac5-8b42-4388ed4a2f09.d5ba0d3b-63ca-4d9d-ba00-47fcfa6b02e1"
-		alt=""
-	  />
-	  <h1>Log in To Continue</h1>
-	  <div class="inp">
-		<input type="text" id="username"  [(ngModel)]="loginObj.phone"/>
-		<label onclick="focusinp('usr')" for="Username">Username</label>
-	  </div>
-	  <div class="inp">
-		<input type="password" id="password" [(ngModel)]="loginObj.password"/>
-		<label onclick="focusinp('pass')" for="Password">Password</label>
-	  </div>
-	  <div style="display: flex"><a href="">Forgot Password? - Support</a></div>
-	  <button type="submit" (click)="onLogin()" >Login</button>
-	  <a onclick="myFunction()" href="#">Dont have a account? Sign up</a>
-	</div>
-	<div class="pic"></div>
-	<script>
-	  document.addEventListener("DOMContentLoaded", function () {
-		const inputs = document.querySelectorAll(".inp input");
-  
-		inputs.forEach((input) => {
-		  input.addEventListener("input", function () {
-			const label = this.nextElementSibling;
-			label.classList.toggle("up", this.value.trim() !== "");
-		  });
-		});
-	  });
-  
-	  function focusinp(inp) {
-		if (inp == "usr") {
-		  document.getElementById("username").focus();
-		} else if (inp == "pass") {
-		  document.getElementById("password").focus();
-		} else {
-		  document.getElementById("username").focus();
-		}
-	  }
-	</script>
-  </body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - HotelApp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@700&family=Figtree:wght@700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="container">
+    <div class="pic2"></div>
+    <img
+      src="https://store-images.s-microsoft.com/image/apps.28471.14139628370441750.28b315c6-e587-4ac5-8b42-4388ed4a2f09.d5ba0d3b-63ca-4d9d-ba00-47fcfa6b02e1"
+      alt=""
+    />
+    <h1>Log in To Continue</h1>
+    <div class="inp">
+      <input type="text" id="username" [(ngModel)]="loginObj.phone" />
+      <label onclick="focusinp('usr')" for="Username">Username</label>
+    </div>
+    <div class="inp">
+      <input type="password" id="password" [(ngModel)]="loginObj.password" />
+      <label onclick="focusinp('pass')" for="Password">Password</label>
+    </div>
+    <div style="display: flex"><a href="">Forgot Password? - Support</a></div>
+    <button type="submit" (click)="onLogin()">Login</button>
+    <a onclick="myFunction()" href="#">Dont have a account? Sign up</a>
+  </div>
+  <div class="pic"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const inputs = document.querySelectorAll(".inp input");
+
+      inputs.forEach((input) => {
+        input.addEventListener("input", function () {
+          const label = this.nextElementSibling;
+          label.classList.toggle("up", this.value.trim() !== "");
+        });
+      });
+    });
+
+    function focusinp(inp) {
+      if (inp == "usr") {
+        document.getElementById("username").focus();
+      } else if (inp == "pass") {
+        document.getElementById("password").focus();
+      } else {
+        document.getElementById("username").focus();
+      }
+    }
+  </script>
+</body>
