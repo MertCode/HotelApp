@@ -14,7 +14,7 @@ body {
 .container {
   width: 50%;
   height: 100%;
-  background-color: #24242c;
+  background-image: linear-gradient(to bottom, #010214, #09093b);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,21 +26,21 @@ body {
   width: 50%;
   height: 100%;
   overflow: hidden;
-  background-image: url("https://4kwallpapers.com/images/wallpapers/dark-blue-pink-2560x2560-12661.jpg");
+  background-image: url("https://i.pinimg.com/originals/37/bf/0d/37bf0dfa0aec4b20af9f7216f5973637.jpg");
   background-size: cover;
   background-position: center;
 }
 
-/* .pic2 {
-    width: 100%;
-    height: 15px;
-    position: absolute;
-    display: none;
-    top: 0;
-    background-image: url("https://4kwallpapers.com/images/wallpapers/dark-blue-pink-2560x2560-12661.jpg");
-    background-size: cover;
-    background-position: center;
-} */
+.pic2 {
+  width: 100%;
+  height: 15px;
+  position: absolute;
+  display: none;
+  top: 0;
+  background-image: url("https://4kwallpapers.com/images/wallpapers/dark-blue-pink-2560x2560-12661.jpg");
+  background-size: cover;
+  background-position: center;
+}
 
 .inp {
   width: 350px;
@@ -84,7 +84,8 @@ input:focus {
   box-shadow: #6767ff 0px 1px 1px, #6767ff 0px 0px 0px 1px;
 }
 
-input:focus + label {
+input:focus + label,
+input:not(:placeholder-shown) + label {
   left: 20px;
   transform: translateY(-22px);
   font-size: 12px;
@@ -150,9 +151,9 @@ img {
     display: none;
   }
 
-  /* .pic2 {
-        display: block;
-    } */
+  .pic2 {
+    display: block;
+  }
 
   .container {
     width: 100%;
