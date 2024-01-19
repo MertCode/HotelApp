@@ -1,109 +1,176 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
-.parent {
+body {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #111;
-  width: 100%;
-  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: #24242c;
 }
-.ring {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.ring i {
-  position: absolute;
-  inset: 0;
-  border: 2px solid #fff;
-  transition: 0.5s;
-}
-.ring i:nth-child(1) {
-  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-  animation: animate 6s linear infinite;
-}
-.ring i:nth-child(2) {
-  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
-  animation: animate 4s linear infinite;
-}
-.ring i:nth-child(3) {
-  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
-  animation: animate2 10s linear infinite;
-}
-.ring:hover i {
-  border: 6px solid var(--clr);
-  filter: drop-shadow(0 0 20px var(--clr));
-}
-@keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes animate2 {
-  0% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-.login {
-  position: absolute;
-  width: 300px;
+
+.container {
+  width: 50%;
   height: 100%;
+  background-color: #24242c;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
-.login h2 {
-  font-size: 2em;
-  color: #fff;
+
+.pic {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  background-image: url("https://4kwallpapers.com/images/wallpapers/dark-blue-pink-2560x2560-12661.jpg");
+  background-size: cover;
+  background-position: center;
 }
-.login .inputBx {
-  position: relative;
-  width: 100%;
-}
-.login .inputBx input {
-  position: relative;
-  width: 100%;
-  padding: 12px 20px;
-  background: transparent;
-  border: 2px solid #fff;
-  border-radius: 40px;
-  font-size: 1.2em;
-  color: #fff;
-  box-shadow: none;
-  outline: none;
-}
-.login .inputBx input[type="submit"] {
-  width: 100%;
-  background: #0078ff;
-  background: linear-gradient(45deg, #ff357a, #fff172);
-  border: none;
-  cursor: pointer;
-}
-.login .inputBx input::placeholder {
-  color: rgba(255, 255, 255, 0.75);
-}
-.login .links {
-  position: relative;
-  width: 100%;
+
+/* .pic2 {
+    width: 100%;
+    height: 15px;
+    position: absolute;
+    display: none;
+    top: 0;
+    background-image: url("https://4kwallpapers.com/images/wallpapers/dark-blue-pink-2560x2560-12661.jpg");
+    background-size: cover;
+    background-position: center;
+} */
+
+.inp {
+  width: 350px;
+  height: 50px;
+  max-height: 50px;
+  min-height: 50px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
+  position: relative;
 }
-.login .links a {
+
+label {
+  position: absolute;
+  left: 20px;
+  color: #777780;
+  height: 20px;
+  transform: translateY(2.5px);
+  padding-left: 5px;
+  cursor: text;
+  padding-right: 5px;
+  transition: 0.2s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 2px solid #494954;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.4s;
   color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 15px;
+}
+
+input:focus {
+  border: 2px solid #1f1fff;
+  box-shadow: #6767ff 0px 1px 1px, #6767ff 0px 0px 0px 1px;
+}
+
+input:focus + label {
+  left: 20px;
+  transform: translateY(-22px);
+  font-size: 12px;
+  background-color: #24242c;
+}
+
+.up {
+  left: 20px;
+  transform: translateY(-22px);
+  font-size: 12px;
+  background-color: #24242c;
+}
+
+button {
+  width: 350px;
+  height: 50px;
+  min-height: 50px;
+  max-height: 50px;
+  background-color: #2020db;
+  border: 2px solid #1f1fff;
+  border-radius: 50px;
+  outline: none;
+  transition: 0.4s;
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: "Figtree", sans-serif;
+}
+
+button:hover {
+  background-color: #1717c2;
+  border: 2px solid #1717c2;
+}
+
+h1 {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-family: "Figtree", sans-serif;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #bbbbbb;
   text-decoration: none;
+  font-size: 12px;
+  font-family: "Figtree", sans-serif;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  width: 70px;
+  border-radius: 10px;
+  border: 1px solid #494954;
+}
+
+@media only screen and (max-width: 750px) {
+  .pic {
+    display: none;
+  }
+
+  /* .pic2 {
+        display: block;
+    } */
+
+  .container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-height: 450px) {
+  .pic {
+    display: none;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  body {
+    padding-bottom: 10px;
+    overflow: scroll;
+    height: 100%;
+  }
 }
