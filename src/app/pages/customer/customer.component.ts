@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { RoomService } from 'src/app/service/room.service';
 
 @Component({
@@ -8,9 +9,10 @@ import { RoomService } from 'src/app/service/room.service';
 })
 export class CustomerComponent implements OnInit {
   customerList: any[] = [];
-  constructor(private roomSrv: RoomService) {}
+  constructor(private roomSrv: RoomService, private toaster: ToastrService) {}
   ngOnInit(): void {
     this.getCustomer();
+    this.toaster.success('Customer List', 'Success');
   }
   getCustomer() {
     this.roomSrv.getAllCustomers().subscribe((res: any) => {

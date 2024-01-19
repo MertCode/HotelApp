@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { RoomService } from 'src/app/service/room.service';
 
 @Component({
@@ -15,9 +16,11 @@ export class UsersComponent implements OnInit {
     role: '',
   };
 
-  constructor(private roomSrv: RoomService) {}
+  constructor(private roomSrv: RoomService, private toaster: ToastrService) {}
   ngOnInit(): void {
     this.getUsers();
+    this.toaster.success('Customer List', 'Success');
+
     throw new Error('Method not implemented.');
   }
 
