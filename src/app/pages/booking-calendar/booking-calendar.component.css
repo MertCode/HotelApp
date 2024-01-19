@@ -3,6 +3,41 @@ body {
   margin: 20px;
 }
 
+.responsive-table {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.header-row,
+.body-row {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.header-cell,
+.body-cell {
+  flex: 1;
+  min-width: 80px; /* Adjust as needed */
+  text-align: center;
+  padding: 8px;
+}
+
+.room-cell {
+  flex: 0 0 20%; /* Adjust as needed */
+  text-align: left;
+  padding: 8px;
+}
+
+.booked,
+.key-available {
+  text-align: center;
+}
+
+/* Add your existing .booked and .key-available styles here */
+
 .date {
   text-align: center;
   margin-bottom: 20px;
