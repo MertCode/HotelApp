@@ -21,37 +21,36 @@
 Follow these steps to set up the Hotel Booking App on your local machine:
 
 
-## Clone the repository
-git clone https://github.com/your-username/hotel-booking-app.git
+### Clone the repository
+- git clone https://github.com/your-username/hotel-booking-app.git
 
-## Navigate to the project directory
-cd hotel-booking-app
+### Navigate to the project directory
+- cd hotel-booking-app
 
-## Install dependencies
-npm install
+### Install dependencies
+- npm install
 
 -------------------------------
 
 # 🚀 Usage
 Start the application:
-bash
-Copy code
-npm start
-Open your browser and go to http://localhost:4200 to access the app.
+
+- npm start
+- Open your browser and go to http://localhost:4200 to access the app.
 
 
 # 🤝 Contributing
 If you'd like to contribute to this project, follow these steps:
 
-Fork the project.
-Create your feature branch (git checkout -b feature/AmazingFeature).
-Commit your changes (git commit -m 'Add some AmazingFeature').
-Push to the branch (git push origin feature/AmazingFeature).
-Open a pull request.
+- Fork the project.
+- Create your feature branch (git checkout -b feature/AmazingFeature).
+- Commit your changes (git commit -m 'Add some AmazingFeature').
+- Push to the branch (git push origin feature/AmazingFeature).
+- Open a pull request.
 
 ## Made By
-https://github.com/MertCode
-https://github.com/erenozy66
-https://github.com/magozv
+- https://github.com/MertCode
+- https://github.com/erenozy66
+- https://github.com/magozv
 
 
