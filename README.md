@@ -1,27 +1,57 @@
-# HotelApp
+# Hotel Booking App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.11.
+🏨 Welcome to the Hotel Booking App! This application allows users to manage bookings, view employee lists, and handle room reservations efficiently.
 
-## Development server
+## 🚀 Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Login:** Securely authenticate users and provide access to the application.
 
-## Code scaffolding
+- **Employee List:** View a list of employees associated with the hotel.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **New Booking:** Create a new booking, specifying guest details, room preferences, and booking dates.
 
-## Build
+- **Booking List:** See a comprehensive list of all bookings with details.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Booking Calendar:** Visualize bookings on a calendar for easy management and planning.
 
-## Running unit tests
+- **Rooms:** Manage the list of available rooms and their details.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🛠️ Installation
 
-## Running end-to-end tests
+Follow these steps to set up the Hotel Booking App on your local machine:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+# Clone the repository
+git clone https://github.com/your-username/hotel-booking-app.git
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Navigate to the project directory
+cd hotel-booking-app
+
+# Install dependencies
+npm install
+
+-------------------------------
+
+## 🚀 Usage
+Start the application:
+bash
+Copy code
+npm start
+Open your browser and go to http://localhost:4200 to access the app.
+
+
+## 🤝 Contributing
+If you'd like to contribute to this project, follow these steps:
+
+Fork the project.
+Create your feature branch (git checkout -b feature/AmazingFeature).
+Commit your changes (git commit -m 'Add some AmazingFeature').
+Push to the branch (git push origin feature/AmazingFeature).
+Open a pull request.
+
+Made By
+https://github.com/MertCode
+https://github.com/erenozy66
+https://github.com/magozv
+
+
