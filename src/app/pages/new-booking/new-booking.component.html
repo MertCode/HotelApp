@@ -102,12 +102,12 @@
     </div>
     <div class="col-4">
       <div class="row">
-        <div class="col-6">
+        <div class="col-6 guestdetails">
           <h6>Guest Details</h6>
         </div>
-        <div class="col-6 text-end">
-          <button class="btn btn-primary btn-sm text-end" (click)="addGuest()">
-            Add New
+        <div class="col-6 mr text-end">
+          <button class="btn btn-sm text-end black" (click)="addGuest()">
+            Add Guest
           </button>
         </div>
       </div>
@@ -134,7 +134,7 @@
                     type="text"
                     class="form-control"
                     [(ngModel)]="guest.aadharCardNo"
-                    placeholder="Aadhar No"
+                    placeholder="ID #"
                   />
                 </td>
                 <td>
@@ -150,7 +150,7 @@
     </div>
   </div>
   <div class="row pt-3">
-    <div class="col-8 text-center">
+    <div class="col-8">
       <button class="btn btn-success" (click)="onSaveBooking()">
         Create New Booking
       </button>

@@ -1,5 +1,56 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
-
-* {
-  font-family: Poppins, sans-serif;
+/* Add some styling to the table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
+
+/* Style the table header */
+thead {
+  background-color: #343a40;
+  color: #fff;
+}
+
+/* Style the table header cells */
+th {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #495057;
+  background-color: black;
+  color: #fff
+}
+
+/* Style the table rows */
+tbody {
+  font-size: 14px;
+}
+
+/* Style alternating rows for better readability */
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Style table cells */
+td {
+  padding: 10px;
+}
+
+/* Style the "Remove" button */
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Add some shadow to the table for a modern look */
+.table {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Add some space between the table and other elements */
+.row {
+  margin-bottom: 20px;
+}
+

@@ -3,3 +3,78 @@
 * {
   font-family: Poppins, sans-serif;
 }
+
+/* General Styling */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  margin-top: 30px;
+}
+
+/* Button Styling */
+.btn {
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Table Styling */
+.table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Form Styling */
+.form-control {
+  border-radius: 5px;
+}
+
+/* Checkbox Styling */
+input[type="checkbox"] {
+  margin-top: 5px;
+}
+
+.table th {
+  background-color: black;
+  color: white;
+}
+.btneditor {
+  background-color: black;
+  color: white;
+}
+
+/* Responsive Styling */
+@media (max-width: 767px) {
+  .col-12 {
+    margin-bottom: 20px;
+  }
+}

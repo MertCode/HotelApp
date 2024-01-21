@@ -1,12 +1,4 @@
 <div class="row">
-  <div class="col-12 text-end">
-    <button class="btn btn-primary" (click)="AddNewRoom()">Add New</button>
-    <button class="btn btn-success mx-2" (click)="saveRooms()">
-      Bulk Update
-    </button>
-  </div>
-</div>
-<div class="row">
   <div class="col-12">
     <table class="table table-bordered">
       <thead>
@@ -81,5 +73,13 @@
         </tr>
       </tbody>
     </table>
+  </div>
+  <div class="row">
+    <div class="col-12 text-end">
+      <button class="btn btneditor" (click)="AddNewRoom()">Add New</button>
+      <button class="btn btneditor mx-2" (click)="saveRooms()">
+        Bulk Update
+      </button>
+    </div>
   </div>
 </div>

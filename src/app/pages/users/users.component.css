@@ -3,3 +3,81 @@
 * {
   font-family: Poppins, sans-serif;
 }
+
+.row {
+  margin: 20px 0;
+}
+
+/* Card Styling */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  border-bottom: none;
+  background-color: #000000;
+}
+
+/* Table Styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table thead th {
+  background-color: #000000;
+  color: #fff;
+  border-color: #495057;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Button Styling */
+.btn {
+  cursor: pointer;
+  margin-right: 0.2cm;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Responsive Styling */
+@media (max-width: 767px) {
+  .col-md-4 {
+    margin-top: 20px;
+  }
+}
+
+.header1 {
+  background-color: #343a40;
+}
+
+.header1 {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  
+}
