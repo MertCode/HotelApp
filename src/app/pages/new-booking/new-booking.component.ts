@@ -65,7 +65,7 @@ export class NewBookingComponent implements OnInit {
     this.roomSrv.createBooking(this.bookingObj).subscribe((res: any) => {
       if (res.result) {
         this.toaster.success('Booking created successfully');
-        this.router.navigate(['/booking-calendar']);
+        this.router.navigate(['/booking-list']);
       } else {
         this.toaster.error(res.message);
         console.log(res);
@@ -73,4 +73,3 @@ export class NewBookingComponent implements OnInit {
     });
   }
 }
-

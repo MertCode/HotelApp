@@ -38,7 +38,7 @@ export class RoomsComponent implements OnInit {
   saveRooms() {
     this.roomSrv.saveUpdateRoom(this.roomList).subscribe((Res: any) => {
       if (Res.result) {
-        this.toaster.success('Data successfully updated!');
+        this.toaster.success('Rooms successfully updated!');
         this.getAllRooms();
       } else {
         this.toaster.error(Res.message);
