@@ -9,13 +9,14 @@ import { RoomService } from 'src/app/service/room.service';
   styleUrls: ['./booking-list.component.css'],
 })
 export class BookingListComponent implements OnInit {
-  constructor(
-    private roomSrv: RoomService,
-    private router: Router,
-    private toaster: ToastrService
-  ) {}
-
+  bookingList: any[] = [];
+  constructor(private roomSrv: RoomService, private toaster: ToastrService) {}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.getBookings();
+  }
+  getBookings() {
+    this.roomSrv.getAllBookings().subscribe((res: any) => {
+      this.bookingList = res.data;
+    });
   }
 }

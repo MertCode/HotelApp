@@ -50,4 +50,8 @@ export class RoomService {
   createBooking(obj: any) {
     return this.http.post(this.apiEndPoint + 'bookroom', obj);
   }
+
+  getAllBookings() {
+    return this.http.get(this.apiEndPoint + 'GetAllBookings');
+  }
 }
