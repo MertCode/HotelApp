@@ -5,53 +5,56 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class RoomService {
-  apiEndPoint: string =
+  apiEndPoint1: string =
     'https://freeapi.miniprojectideas.com/api/HotelBooking/';
+  apiEndPoint2: string = 'http://localhost:8000/api/';
+
   constructor(private http: HttpClient) {}
 
   login(obj: any) {
-    return this.http.post(this.apiEndPoint + 'Login', obj);
+    return this.http.post(this.apiEndPoint1 + 'Login', obj);
   }
 
   getAllRooms() {
-    return this.http.get(this.apiEndPoint + 'GetAllRooms');
+    return this.http.get(this.apiEndPoint2 + 'rooms');
   }
+
   GetBookingsByMonth(month: number) {
     return this.http.get(
-      this.apiEndPoint + 'GetBookingsByMonth?month=' + month
+      this.apiEndPoint1 + 'GetBookingsByMonth?month=' + month
     );
   }
 
   saveUpdateRoom(obj: any) {
-    return this.http.post(this.apiEndPoint + 'AddUpdateBulkRooms', obj);
+    return this.http.post(this.apiEndPoint1 + 'AddUpdateBulkRooms', obj);
   }
 
   deleteRoom(id: any) {
     return this.http.delete(
-      this.apiEndPoint + 'DeleteRoomByRoomId?roomId=' + id
+      this.apiEndPoint1 + 'DeleteRoomByRoomId?roomId=' + id
     );
   }
 
   getAllCustomers() {
-    return this.http.get(this.apiEndPoint + 'GetAllCustomers');
+    return this.http.get(this.apiEndPoint2 + 'customers');
   }
   getAllUsers() {
-    return this.http.get(this.apiEndPoint + 'GetAllUsers');
+    return this.http.get(this.apiEndPoint2 + 'users');
   }
   addUpdateUser(obj: any) {
-    return this.http.post(this.apiEndPoint + 'AddUpdateUser', obj);
+    return this.http.post(this.apiEndPoint1 + 'AddUpdateUser', obj);
   }
   deleteUser(id: any) {
     return this.http.delete(
-      this.apiEndPoint + 'DeleteUserByUserId?userId=' + id
+      this.apiEndPoint1 + 'DeleteUserByUserId?userId=' + id
     );
   }
 
   createBooking(obj: any) {
-    return this.http.post(this.apiEndPoint + 'bookroom', obj);
+    return this.http.post(this.apiEndPoint1 + 'bookroom', obj);
   }
 
   getAllBookings() {
-    return this.http.get(this.apiEndPoint + 'GetAllBookings');
+    return this.http.get(this.apiEndPoint2 + 'bookings');
   }
 }
