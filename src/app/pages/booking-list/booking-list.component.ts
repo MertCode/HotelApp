@@ -15,8 +15,8 @@ export class BookingListComponent implements OnInit {
     this.getBookings();
   }
   getBookings() {
-    this.roomSrv.getAllBookings().subscribe((res: any) => {
-      this.bookingList = res.data;
+    this.roomSrv.getAllBookings().then((res: any) => {
+      this.bookingList = res;
     });
   }
 }

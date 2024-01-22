@@ -14,8 +14,8 @@ export class CustomerComponent implements OnInit {
     this.getCustomer();
   }
   getCustomer() {
-    this.roomSrv.getAllCustomers().subscribe((res: any) => {
-      this.customerList = res.data;
+    this.roomSrv.getAllCustomers().then((res: any) => {
+      this.customerList = res;
     });
   }
 }
