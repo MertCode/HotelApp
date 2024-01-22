@@ -10,20 +10,23 @@ import { RoomService } from 'src/app/service/room.service';
 })
 export class BookingListComponent implements OnInit {
   bookingList: any[] = [];
+
   constructor(private roomSrv: RoomService, private toaster: ToastrService) {}
+
   ngOnInit(): void {
     this.getBookings();
   }
+
   getBookings() {
     this.roomSrv.getAllBookings().then((res: any) => {
       this.bookingList = res;
     });
   }
 
-  RemoveBooking(id: number) {
-    this.roomSrv.deleteBooking(id).subscribe((res: any) => {
-      if (res.result) {
-        this.toaster.success('Room successfully deleted!');
+  deleteBooking(id: number) {
+    this.roomSrv.deleteBooking(id).then((res: any) => {
+      if (res) {
+        this.toaster.success('Booking deleted successfully');
         this.getBookings();
       } else {
         this.toaster.error(res.message);
