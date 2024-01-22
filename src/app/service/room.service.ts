@@ -16,7 +16,8 @@ export class RoomService {
   }
 
   getAllRooms() {
-    return this.http.get(this.apiEndPoint2 + 'rooms');
+    //return this.http.get(this.apiEndPoint2 + 'rooms');
+    return fetch(this.apiEndPoint2 + 'rooms').then((res) => res.json());
   }
 
   GetBookingsByMonth(month: number) {

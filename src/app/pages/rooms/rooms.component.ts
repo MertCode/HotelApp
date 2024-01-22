@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Route, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { RoomService } from 'src/app/service/room.service';
 
@@ -30,8 +30,8 @@ export class RoomsComponent implements OnInit {
   }
 
   getAllRooms() {
-    this.roomSrv.getAllRooms().subscribe((res: any) => {
-      this.roomList = res.data;
+    this.roomSrv.getAllRooms().then((res: any) => {
+      this.roomList = res;
     });
   }
 

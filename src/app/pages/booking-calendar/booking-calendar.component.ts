@@ -21,9 +21,9 @@ export class BookingCalendarComponent implements OnInit {
   }
 
   getAllRooms() {
-    this.roomSrv.getAllRooms().subscribe((res: any) => {
+    /*  this.roomSrv.getAllRooms().subscribe((res: any) => {
       this.allRooms = res.data;
-    });
+    }); */
   }
   GetBookingsByMonth(month: number) {
     this.roomSrv.GetBookingsByMonth(month).subscribe((res: any) => {

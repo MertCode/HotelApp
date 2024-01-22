@@ -47,9 +47,9 @@ export class NewBookingComponent implements OnInit {
   }
 
   loadRooms() {
-    this.roomSrv.getAllRooms().subscribe((res: any) => {
+    /*  this.roomSrv.getAllRooms().subscribe((res: any) => {
       this.roomList = res.data;
-    });
+    }); */
   }
 
   addGuest() {
