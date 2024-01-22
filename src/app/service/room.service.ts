@@ -37,10 +37,10 @@ export class RoomService {
   }
 
   getAllCustomers() {
-    return this.http.get(this.apiEndPoint2 + 'customers');
+    return fetch(this.apiEndPoint2 + 'customers').then((res) => res.json());
   }
   getAllUsers() {
-    return this.http.get(this.apiEndPoint2 + 'users');
+    return fetch(this.apiEndPoint2 + 'users').then((res) => res.json());
   }
   addUpdateUser(obj: any) {
     return this.http.post(this.apiEndPoint1 + 'AddUpdateUser', obj);
@@ -56,6 +56,6 @@ export class RoomService {
   }
 
   getAllBookings() {
-    return this.http.get(this.apiEndPoint2 + 'bookings');
+    return fetch(this.apiEndPoint2 + 'bookings').then((res) => res.json());
   }
 }

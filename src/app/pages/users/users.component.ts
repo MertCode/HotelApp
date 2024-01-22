@@ -27,8 +27,8 @@ export class UsersComponent implements OnInit {
   }
 
   getUsers() {
-    this.roomSrv.getAllUsers().subscribe((res: any) => {
-      this.userList = res.data;
+    this.roomSrv.getAllUsers().then((res: any) => {
+      this.userList = res;
     });
   }
 
