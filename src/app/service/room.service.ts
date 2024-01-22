@@ -20,12 +20,6 @@ export class RoomService {
     return fetch(this.apiEndPoint2 + 'rooms').then((res) => res.json());
   }
 
-  GetBookingsByMonth(month: number) {
-    return this.http.get(
-      this.apiEndPoint1 + 'GetBookingsByMonth?month=' + month
-    );
-  }
-
   saveUpdateRoom(obj: any) {
     return this.http.post(this.apiEndPoint1 + 'AddUpdateBulkRooms', obj);
   }
@@ -57,5 +51,11 @@ export class RoomService {
 
   getAllBookings() {
     return fetch(this.apiEndPoint2 + 'bookings').then((res) => res.json());
+  }
+
+  deleteBooking(id: any) {
+    return this.http.delete(
+      this.apiEndPoint2 + 'DeleteBookingByBookingId?bookingId=' + id
+    );
   }
 }

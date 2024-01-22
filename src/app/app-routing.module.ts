@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BookingCalendarComponent } from './pages/booking-calendar/booking-calendar.component';
 import { BookingListComponent } from './pages/booking-list/booking-list.component';
 import { CustomerComponent } from './pages/customer/customer.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NewBookingComponent } from './pages/new-booking/new-booking.component';
@@ -25,10 +23,6 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: 'dashboard',
-        component: DashboardComponent,
-      },
-      {
         path: 'rooms',
         component: RoomsComponent,
       },
@@ -43,10 +37,6 @@ const routes: Routes = [
       {
         path: 'users',
         component: UsersComponent,
-      },
-      {
-        path: 'booking-calendar',
-        component: BookingCalendarComponent,
       },
       {
         path: 'customer',

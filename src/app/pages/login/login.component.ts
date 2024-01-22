@@ -24,7 +24,8 @@ export class LoginComponent {
       (res: any) => {
         if (res.result) {
           localStorage.setItem('hotelUser', JSON.stringify(res.data));
-          this.router.navigateByUrl('/dashboard');
+          this.router.navigateByUrl('/bookings');
+          this.toaster.success('Logged in successfully');
         } else {
           this.toaster.error('Check User Credentials');
         }

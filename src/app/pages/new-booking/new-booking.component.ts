@@ -47,9 +47,9 @@ export class NewBookingComponent implements OnInit {
   }
 
   loadRooms() {
-    /*  this.roomSrv.getAllRooms().subscribe((res: any) => {
-      this.roomList = res.data;
-    }); */
+    this.roomSrv.getAllRooms().then((res: any) => {
+      this.roomList = res;
+    });
   }
 
   addGuest() {
@@ -57,6 +57,7 @@ export class NewBookingComponent implements OnInit {
     const parseObj = JSON.parse(obj);
     this.bookingObj.hotelBookingDetails.unshift(parseObj);
   }
+
   removeGuest(index: number) {
     this.bookingObj.hotelBookingDetails.splice(index, 1);
   }

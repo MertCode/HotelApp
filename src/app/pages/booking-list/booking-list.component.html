@@ -30,7 +30,12 @@
             {{ cust.passengerName }}
           </td>
           <td>
-            <button class="btn btn-sm btn-danger">Remove</button>
+            <button
+              class="btn btn-sm btn-danger"
+              (click)="RemoveBooking(cust.bookingId)"
+            >
+              Remove
+            </button>
           </td>
         </tr>
       </tbody>

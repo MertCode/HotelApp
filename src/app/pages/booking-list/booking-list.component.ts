@@ -19,4 +19,15 @@ export class BookingListComponent implements OnInit {
       this.bookingList = res;
     });
   }
+
+  RemoveBooking(id: number) {
+    this.roomSrv.deleteBooking(id).subscribe((res: any) => {
+      if (res.result) {
+        this.toaster.success('Room successfully deleted!');
+        this.getBookings();
+      } else {
+        this.toaster.error(res.message);
+      }
+    });
+  }
 }
