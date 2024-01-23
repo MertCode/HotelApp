@@ -45,17 +45,29 @@ export class RoomService {
     );
   }
 
-  createBooking(obj: any) {
-    return this.http.post(this.apiEndPoint1 + 'bookroom', obj);
-  }
+  // createBooking(obj: any) {
+  //   return this.http.post(this.apiEndPoint1 + 'bookroom', obj);
+  // }
 
   getAllBookings() {
     return fetch(this.apiEndPoint2 + 'bookings').then((res) => res.json());
   }
 
-  deleteBooking(id: any) {
-    return this.http.delete(
-      this.apiEndPoint2 + 'DeleteBookingByBookingId?bookingId=' + id
-    );
+  deleteBooking(id: number) {
+    return fetch('http://localhost:8000/api/bookings/' + id, {
+      method: 'DELETE',
+    });
+  }
+
+  createBooking(bookingDetails: any) {
+    console.log(JSON.stringify(bookingDetails));
+
+    return fetch('http://localhost:8000/api/bookings', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify(bookingDetails),
+    });
   }
 }

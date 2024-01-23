@@ -3,36 +3,45 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { RoomService } from 'src/app/service/room.service';
 
+interface Booking {
+  name: string;
+  mobileNo: string;
+  email: string;
+  nationalIdNumber: string;
+  city: string;
+  address: string;
+  bookingFromDate: string;
+  bookingToDate: string;
+  bookingRate: number;
+  naration: string;
+  roomId: number;
+  hotelBookingDetails: Array<any>;
+}
+
 @Component({
   selector: 'app-new-booking',
   templateUrl: './new-booking.component.html',
   styleUrls: ['./new-booking.component.css'],
 })
 export class NewBookingComponent implements OnInit {
-  bookingObj: any = {
+  bookingObj: Booking = {
     name: '',
     mobileNo: '',
     email: '',
-    aadharNo: '',
+    nationalIdNumber: '',
     city: '',
     address: '',
-    bookingId: 0,
     roomId: 0,
-    customerId: 0,
     bookingFromDate: '',
     bookingToDate: '',
-    createdDate: new Date(),
     bookingRate: 0,
     naration: '',
-    createdBy: '1',
-    hotelBookingDetails: [],
+    hotelBookingDetails: [], // dit is nu teruggezet
   };
 
-  guestObj: any = {
-    bookingDetailId: 0,
-    bookingId: 0,
-    customerName: '',
-    aadharCardNo: '',
+  guestObj = {
+    name: '',
+    nationalIdNumber: '',
   };
 
   roomList: any[] = [];
@@ -54,22 +63,21 @@ export class NewBookingComponent implements OnInit {
 
   addGuest() {
     const obj = JSON.stringify(this.guestObj);
-    const parseObj = JSON.parse(obj);
-    this.bookingObj.hotelBookingDetails.unshift(parseObj);
+    const parserobj = JSON.parse(obj);
+    this.bookingObj.hotelBookingDetails.unshift(parserobj);
   }
 
   removeGuest(index: number) {
     this.bookingObj.hotelBookingDetails.splice(index, 1);
   }
 
-  onSaveBooking() {
-    this.roomSrv.createBooking(this.bookingObj).subscribe((res: any) => {
-      if (res.result) {
-        this.toaster.success('Booking created successfully');
-        this.router.navigate(['/booking-list']);
+  createBooking() {
+    this.roomSrv.createBooking(this.bookingObj).then((res) => {
+      if (res.status === 200) {
+        this.toaster.success('Booking successfully saved!');
+        this.router.navigateByUrl('/bookings');
       } else {
-        this.toaster.error(res.message);
-        console.log(res);
+        this.toaster.error(res.statusText);
       }
     });
   }
