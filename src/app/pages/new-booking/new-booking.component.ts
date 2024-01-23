@@ -34,7 +34,7 @@ export class NewBookingComponent implements OnInit {
     bookingFromDate: '',
     bookingToDate: '',
     bookingRate: 0,
-    naration: ''
+    naration: '',
   };
 
   guestObj = {
@@ -66,7 +66,7 @@ export class NewBookingComponent implements OnInit {
   }
 
   removeGuest(index: number) {
-   // this.bookingObj.hotelBookingDetails.splice(index, 1);
+    // this.bookingObj.hotelBookingDetails.splice(index, 1);
   }
 
   createBooking() {

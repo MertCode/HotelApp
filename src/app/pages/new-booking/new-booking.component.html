@@ -14,7 +14,7 @@
         <div class="col-3">
           <label>Mobile</label>
           <input
-            type="text"
+            type="number"
             class="form-control"
             [(ngModel)]="bookingObj.mobileNo"
           />
@@ -22,7 +22,7 @@
         <div class="col-3">
           <label>Email</label>
           <input
-            type="text"
+            type="email"
             class="form-control"
             [(ngModel)]="bookingObj.email"
           />
@@ -32,7 +32,7 @@
         <div class="col-3">
           <label>Nationial ID Number</label>
           <input
-            type="text"
+            type="number"
             class="form-control"
             [(ngModel)]="bookingObj.nationalIdNumber"
           />
@@ -68,7 +68,7 @@
         <div class="col-3">
           <label>Room Price</label>
           <input
-            type="text"
+            type="number"
             class="form-control"
             [(ngModel)]="bookingObj.bookingRate"
           />
@@ -76,7 +76,7 @@
         <div class="col-3">
           <label>Check-In Date</label>
           <input
-            type="date"
+            type="datetime-local"
             class="form-control"
             [(ngModel)]="bookingObj.bookingFromDate"
           />
@@ -84,7 +84,7 @@
         <div class="col-3">
           <label>Check-Out Date</label>
           <input
-            type="date"
+            type="datetime-local"
             class="form-control"
             [(ngModel)]="bookingObj.bookingToDate"
           />
@@ -149,11 +149,12 @@
       </div>
     </div>
   </div> -->
-  <div class="row pt-3">
-    <div class="col-8">
-      <button class="btn btn-success" (click)="createBooking()">
-        Create New Booking
-      </button>
+    <div class="row pt-3">
+      <div class="col-8">
+        <button class="btn btn-success" (click)="createBooking()">
+          Create New Booking
+        </button>
+      </div>
     </div>
   </div>
 </div>
