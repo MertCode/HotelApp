@@ -9,6 +9,12 @@ import { RoomService } from 'src/app/service/room.service';
   styleUrls: ['./users.component.css'],
 })
 export class UsersComponent implements OnInit {
+  password: string = '';
+  showPassword: boolean = false;
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
+
   userList: any[] = [];
   userObj: any = {
     userName: '',
@@ -22,19 +28,19 @@ export class UsersComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit(): void {
-    this.getUsers();
+    this.getEmployees();
   }
 
-  getUsers() {
-    this.roomSrv.getAllUsers().then((res: any) => {
+  getEmployees() {
+    this.roomSrv.getAllEmployees().then((res: any) => {
       this.userList = res;
     });
   }
 
-  SaveUser() {
-    this.roomSrv.addUser(this.userObj).then((res: any) => {
+  saveEmployee() {
+    this.roomSrv.addEmployee(this.userObj).then((res: any) => {
       if (res) {
-        this.getUsers();
+        this.getEmployees();
         this.toaster.success('User successfully added!');
       } else {
         this.toaster.error(res.message);
@@ -47,13 +53,13 @@ export class UsersComponent implements OnInit {
   //   this.userObj = JSON.parse(strObj);
   // }
 
-  onDelete(id: number) {
+  deleteEmployee(id: number) {
     const isDelete = confirm('Are you sure you want to delete this user?');
     if (isDelete) {
-      this.roomSrv.deleteUser(id).then((res: any) => {
+      this.roomSrv.deleteEmployee(id).then((res: any) => {
         if (res) {
           this.toaster.success('User deleted successfully');
-          this.getUsers();
+          this.getEmployees();
         } else {
           this.toaster.error(res.message);
         }

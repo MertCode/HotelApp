@@ -41,12 +41,12 @@ export class RoomService {
     return fetch(this.apiEndPoint2 + 'customers').then((res) => res.json());
   }
 
-  getAllUsers() {
-    return fetch(this.apiEndPoint2 + 'users').then((res) => res.json());
+  getAllEmployees() {
+    return fetch(this.apiEndPoint2 + 'employees/').then((res) => res.json());
   }
 
-  addUser(obj: any) {
-    return fetch(this.apiEndPoint2 + 'users/', {
+  addEmployee(obj: any) {
+    return fetch(this.apiEndPoint2 + 'employees/', {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -55,8 +55,8 @@ export class RoomService {
     });
   }
 
-  deleteUser(id: any) {
-    return fetch(this.apiEndPoint2 + 'users/' + id, {
+  deleteEmployee(id: any) {
+    return fetch(this.apiEndPoint2 + 'employees/' + id, {
       method: 'DELETE',
     });
   }
