@@ -15,7 +15,6 @@ interface Booking {
   bookingRate: number;
   naration: string;
   roomId: number;
-  hotelBookingDetails: Array<any>;
 }
 
 @Component({
@@ -35,8 +34,7 @@ export class NewBookingComponent implements OnInit {
     bookingFromDate: '',
     bookingToDate: '',
     bookingRate: 0,
-    naration: '',
-    hotelBookingDetails: [], // dit is nu teruggezet
+    naration: ''
   };
 
   guestObj = {
@@ -64,11 +62,11 @@ export class NewBookingComponent implements OnInit {
   addGuest() {
     const obj = JSON.stringify(this.guestObj);
     const parserobj = JSON.parse(obj);
-    this.bookingObj.hotelBookingDetails.unshift(parserobj);
+    //this.bookingObj.hotelBookingDetails.unshift(parserobj);
   }
 
   removeGuest(index: number) {
-    this.bookingObj.hotelBookingDetails.splice(index, 1);
+   // this.bookingObj.hotelBookingDetails.splice(index, 1);
   }
 
   createBooking() {

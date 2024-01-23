@@ -36,12 +36,12 @@ export class RoomsComponent implements OnInit {
   }
 
   saveRooms() {
-    this.roomSrv.saveUpdateRoom(this.roomList).subscribe((Res: any) => {
-      if (Res.result) {
-        this.toaster.success('Rooms successfully updated!');
+    this.roomSrv.updateRoom(this.roomList).then((res: any) => {
+      if (res.result) {
+        this.toaster.success('Room list successfully updated!');
         this.getAllRooms();
       } else {
-        this.toaster.error(Res.message);
+        this.toaster.error(res.message);
       }
     });
   }

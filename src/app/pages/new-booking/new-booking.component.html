@@ -60,7 +60,7 @@
           <label>Select Room</label>
           <select class="form-control" [(ngModel)]="bookingObj.roomId">
             <option>Select Room</option>
-            <option *ngFor="let room of roomList" [value]="room.roomId">
+            <option *ngFor="let room of roomList" [value]="room.id">
               {{ room.roomName }}
             </option>
           </select>
@@ -100,7 +100,7 @@
         </div>
       </div>
     </div>
-    <div class="col-4">
+    <!-- <div class="col-4">
       <div class="row">
         <div class="col-6 guestdetails">
           <h6>Guest Details</h6>
@@ -148,7 +148,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="row pt-3">
     <div class="col-8">
       <button class="btn btn-success" (click)="createBooking()">

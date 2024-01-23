@@ -21,7 +21,19 @@ export class RoomService {
   }
 
   saveUpdateRoom(obj: any) {
-    return this.http.post(this.apiEndPoint1 + 'AddUpdateBulkRooms', obj);
+    return this.http.post(this.apiEndPoint2 + 'rooms', obj);
+  }
+
+  updateRoom(roomList: any) {
+    console.log(JSON.stringify(roomList));
+
+    return fetch('http://localhost:8000/api/rooms', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify(roomList),
+    });
   }
 
   deleteRoom(id: any) {
@@ -39,6 +51,7 @@ export class RoomService {
   addUpdateUser(obj: any) {
     return this.http.post(this.apiEndPoint1 + 'AddUpdateUser', obj);
   }
+
   deleteUser(id: any) {
     return this.http.delete(
       this.apiEndPoint1 + 'DeleteUserByUserId?userId=' + id
