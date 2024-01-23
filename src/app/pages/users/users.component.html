@@ -27,7 +27,7 @@
                 </button>
                 <button
                   class="btn btn-sm btn-danger"
-                  (click)="onDelete(cust.userId)"
+                  (click)="onDelete(cust.id)"
                 >
                   Remove
                 </button>
@@ -69,7 +69,7 @@
           />
         </div>
         <div class="text-center">
-          <button class="btn header1" (click)="onSaveUser()">Save User</button>
+          <button class="btn header1" (click)="SaveUser()">Save User</button>
         </div>
       </div>
     </div>

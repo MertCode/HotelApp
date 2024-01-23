@@ -48,14 +48,20 @@ export class RoomService {
   getAllUsers() {
     return fetch(this.apiEndPoint2 + 'users').then((res) => res.json());
   }
-  addUpdateUser(obj: any) {
-    return this.http.post(this.apiEndPoint1 + 'AddUpdateUser', obj);
+  addUser(obj: any) {
+    return fetch('http://localhost:8000/api/users', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify(obj),
+    });
   }
 
   deleteUser(id: any) {
-    return this.http.delete(
-      this.apiEndPoint1 + 'DeleteUserByUserId?userId=' + id
-    );
+    return fetch('http://localhost:8000/api/users/' + id, {
+      method: 'DELETE',
+    });
   }
 
   // createBooking(obj: any) {

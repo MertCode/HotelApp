@@ -11,7 +11,6 @@ import { RoomService } from 'src/app/service/room.service';
 export class UsersComponent implements OnInit {
   userList: any[] = [];
   userObj: any = {
-    userId: 0,
     userName: '',
     password: '',
     role: '',
@@ -32,11 +31,11 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  onSaveUser() {
-    this.roomSrv.addUpdateUser(this.userObj).subscribe((res: any) => {
-      if (res.result) {
-        this.toaster.success('Employee list successfully updated!');
+  SaveUser() {
+    this.roomSrv.addUser(this.userObj).then((res: any) => {
+      if (res) {
         this.getUsers();
+        this.toaster.success('User successfully added!');
       } else {
         this.toaster.error(res.message);
       }
@@ -51,10 +50,10 @@ export class UsersComponent implements OnInit {
   onDelete(id: number) {
     const isDelete = confirm('Are you sure you want to delete this user?');
     if (isDelete) {
-      this.roomSrv.deleteUser(id).subscribe((res: any) => {
-        if (res.result) {
+      this.roomSrv.deleteUser(id).then((res: any) => {
+        if (res) {
+          this.toaster.success('User deleted successfully');
           this.getUsers();
-          this.toaster.success('User successfully deleted!');
         } else {
           this.toaster.error(res.message);
         }
