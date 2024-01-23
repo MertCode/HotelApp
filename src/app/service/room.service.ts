@@ -37,9 +37,9 @@ export class RoomService {
   }
 
   deleteRoom(id: any) {
-    return this.http.delete(
-      this.apiEndPoint1 + 'DeleteRoomByRoomId?roomId=' + id
-    );
+    return fetch('http://localhost:8000/api/rooms/' + id, {
+      method: 'DELETE',
+    });
   }
 
   getAllCustomers() {

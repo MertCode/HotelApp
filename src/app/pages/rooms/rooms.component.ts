@@ -46,16 +46,12 @@ export class RoomsComponent implements OnInit {
       extensionNo: '',
     };
     this.roomList.push(obj);
-    console.log(this.roomList[this.roomList.length - 1]);
   }
 
   saveRooms() {
-    console.log('save: ' + this.roomList[this.roomList.length - 1]);
     const postObj = this.roomList[this.roomList.length - 1];
-    // json stringify
-    console.log(JSON.stringify(postObj));
     this.roomSrv.updateRoom(postObj).then((res: any) => {
-      if (res.result) {
+      if (res) {
         this.toaster.success('Room list successfully updated!');
         this.getAllRooms();
       } else {
@@ -65,9 +61,9 @@ export class RoomsComponent implements OnInit {
   }
 
   onDelete(id: number) {
-    this.roomSrv.deleteRoom(id).subscribe((res: any) => {
-      if (res.result) {
-        this.toaster.success('Room successfully deleted!');
+    this.roomSrv.deleteRoom(id).then((res: any) => {
+      if (res) {
+        this.toaster.success('Room deleted successfully');
         this.getAllRooms();
       } else {
         this.toaster.error(res.message);
