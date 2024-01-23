@@ -42,10 +42,10 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  onEdit(data: any) {
-    const strObj = JSON.stringify(data);
-    this.userObj = JSON.parse(strObj);
-  }
+  // onEdit(data: any) {
+  //   const strObj = JSON.stringify(data);
+  //   this.userObj = JSON.parse(strObj);
+  // }
 
   onDelete(id: number) {
     const isDelete = confirm('Are you sure you want to delete this user?');

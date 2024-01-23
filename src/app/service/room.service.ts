@@ -12,22 +12,17 @@ export class RoomService {
   constructor(private http: HttpClient) {}
 
   login(obj: any) {
-    return this.http.post(this.apiEndPoint1 + 'Login', obj);
+    return this.http.post(this.apiEndPoint2 + 'login', obj);
   }
 
   getAllRooms() {
-    //return this.http.get(this.apiEndPoint2 + 'rooms');
     return fetch(this.apiEndPoint2 + 'rooms').then((res) => res.json());
   }
-
-  // saveUpdateRoom(obj: any) {
-  //   return this.http.post(this.apiEndPoint2 + 'rooms', obj);
-  // }
 
   updateRoom(roomList: any) {
     console.log(JSON.stringify(roomList));
 
-    return fetch('http://localhost:8000/api/rooms', {
+    return fetch(this.apiEndPoint2 + 'rooms/', {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -37,7 +32,7 @@ export class RoomService {
   }
 
   deleteRoom(id: any) {
-    return fetch('http://localhost:8000/api/rooms/' + id, {
+    return fetch(this.apiEndPoint2 + 'rooms/' + id, {
       method: 'DELETE',
     });
   }
@@ -45,11 +40,13 @@ export class RoomService {
   getAllCustomers() {
     return fetch(this.apiEndPoint2 + 'customers').then((res) => res.json());
   }
+
   getAllUsers() {
     return fetch(this.apiEndPoint2 + 'users').then((res) => res.json());
   }
+
   addUser(obj: any) {
-    return fetch('http://localhost:8000/api/users', {
+    return fetch(this.apiEndPoint2 + 'users/', {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -59,21 +56,17 @@ export class RoomService {
   }
 
   deleteUser(id: any) {
-    return fetch('http://localhost:8000/api/users/' + id, {
+    return fetch(this.apiEndPoint2 + 'users/' + id, {
       method: 'DELETE',
     });
   }
-
-  // createBooking(obj: any) {
-  //   return this.http.post(this.apiEndPoint1 + 'bookroom', obj);
-  // }
 
   getAllBookings() {
     return fetch(this.apiEndPoint2 + 'bookings').then((res) => res.json());
   }
 
   deleteBooking(id: number) {
-    return fetch('http://localhost:8000/api/bookings/' + id, {
+    return fetch(this.apiEndPoint2 + 'bookings/' + id, {
       method: 'DELETE',
     });
   }
@@ -81,7 +74,7 @@ export class RoomService {
   createBooking(bookingDetails: any) {
     console.log(JSON.stringify(bookingDetails));
 
-    return fetch('http://localhost:8000/api/bookings', {
+    return fetch(this.apiEndPoint2 + 'bookings/', {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -90,7 +83,7 @@ export class RoomService {
     });
   }
   deleteCustomer(id: number) {
-    return fetch('http://localhost:8000/api/customers/' + id, {
+    return fetch(this.apiEndPoint2 + 'customers/' + id, {
       method: 'DELETE',
     });
   }
