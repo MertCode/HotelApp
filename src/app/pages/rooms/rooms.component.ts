@@ -35,16 +35,6 @@ export class RoomsComponent implements OnInit {
     });
   }
 
-  saveRooms() {
-    this.roomSrv.updateRoom(this.roomList).then((res: any) => {
-      if (res.result) {
-        this.toaster.success('Room list successfully updated!');
-        this.getAllRooms();
-      } else {
-        this.toaster.error(res.message);
-      }
-    });
-  }
   AddNewRoom() {
     const obj = {
       roomId: 0,
@@ -55,8 +45,25 @@ export class RoomsComponent implements OnInit {
       roomTariff: 0,
       extensionNo: '',
     };
-    this.roomList.unshift(obj);
+    this.roomList.push(obj);
+    console.log(this.roomList[this.roomList.length - 1]);
   }
+
+  saveRooms() {
+    console.log('save: ' + this.roomList[this.roomList.length - 1]);
+    const postObj = this.roomList[this.roomList.length - 1];
+    // json stringify
+    console.log(JSON.stringify(postObj));
+    this.roomSrv.updateRoom(postObj).then((res: any) => {
+      if (res.result) {
+        this.toaster.success('Room list successfully updated!');
+        this.getAllRooms();
+      } else {
+        this.toaster.error(res.message);
+      }
+    });
+  }
+
   onDelete(id: number) {
     this.roomSrv.deleteRoom(id).subscribe((res: any) => {
       if (res.result) {

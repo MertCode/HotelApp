@@ -20,9 +20,9 @@ export class RoomService {
     return fetch(this.apiEndPoint2 + 'rooms').then((res) => res.json());
   }
 
-  saveUpdateRoom(obj: any) {
-    return this.http.post(this.apiEndPoint2 + 'rooms', obj);
-  }
+  // saveUpdateRoom(obj: any) {
+  //   return this.http.post(this.apiEndPoint2 + 'rooms', obj);
+  // }
 
   updateRoom(roomList: any) {
     console.log(JSON.stringify(roomList));
