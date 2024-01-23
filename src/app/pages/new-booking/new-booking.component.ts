@@ -72,13 +72,20 @@ export class NewBookingComponent implements OnInit {
   }
 
   createBooking() {
-    this.roomSrv.createBooking(this.bookingObj).then((res) => {
-      if (res.status === 200) {
-        this.toaster.success('Booking successfully saved!');
-        this.router.navigateByUrl('/bookings');
-      } else {
-        this.toaster.error(res.statusText);
-      }
-    });
+    this.roomSrv
+      .createBooking(this.bookingObj)
+      .then((res) => {
+        if (res.status === 200) {
+          this.toaster.success('Booking successfully saved!');
+          this.router.navigateByUrl('/bookings');
+        } else {
+          this.toaster.error(res.statusText);
+          console.log(res);
+        }
+      })
+      .catch((error) => {
+        console.error('Error creating booking:', error);
+        this.toaster.error('An error occurred while saving the booking.');
+      });
   }
 }

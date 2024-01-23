@@ -3,7 +3,7 @@
     <table class="table table-bordered">
       <thead>
         <tr class="tr">
-          <th>Sr No</th>
+          <th>Customer ID</th>
           <th>Name</th>
           <th>Phone</th>
           <th>Email</th>
@@ -35,7 +35,12 @@
             {{ cust.address }}
           </td>
           <td>
-            <button class="btn btn-sm btn-danger">Remove</button>
+            <button
+              class="btn btn-sm btn-danger"
+              (click)="deleteCustomer(cust.id)"
+            >
+              Remove
+            </button>
           </td>
         </tr>
       </tbody>

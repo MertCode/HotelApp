@@ -70,4 +70,9 @@ export class RoomService {
       body: JSON.stringify(bookingDetails),
     });
   }
+  deleteCustomer(id: number) {
+    return fetch('http://localhost:8000/api/customers/' + id, {
+      method: 'DELETE',
+    });
+  }
 }

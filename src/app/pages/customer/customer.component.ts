@@ -18,4 +18,14 @@ export class CustomerComponent implements OnInit {
       this.customerList = res;
     });
   }
+  deleteCustomer(id: number) {
+    this.roomSrv.deleteCustomer(id).then((res: any) => {
+      if (res) {
+        this.toaster.success('Customer deleted successfully');
+        this.getCustomer();
+      } else {
+        this.toaster.error(res.message);
+      }
+    });
+  }
 }
