@@ -12,7 +12,13 @@ export class RoomService {
   constructor(private http: HttpClient) {}
 
   login(obj: any) {
-    return this.http.post(this.apiEndPoint2 + 'login', obj);
+    return fetch(this.apiEndPoint2 + 'employees', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify(obj),
+    });
   }
 
   getAllRooms() {

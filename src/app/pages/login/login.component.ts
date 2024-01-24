@@ -20,17 +20,13 @@ export class LoginComponent {
   ) {}
 
   onLogin() {
-    this.roomSrv.login(this.loginObj).subscribe(
-      (res: any) => {
-        if (res.result) {
-          localStorage.setItem('hotelUser', JSON.stringify(res.data));
-          this.router.navigateByUrl('/bookings');
-          this.toaster.success('Logged in successfully');
-        } else {
-          this.toaster.error('Check User Credentials');
-        }
-      },
-      (error: any) => {}
-    );
+    this.roomSrv.login(this.loginObj).then((res) => {
+      if (res) {
+        this.toaster.success('Login successful!');
+        this.router.navigateByUrl('/rooms');
+      } else {
+        this.toaster.error(res);
+      }
+    });
   }
 }
