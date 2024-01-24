@@ -12,9 +12,10 @@ import { CustomerComponent } from './pages/customer/customer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { LoginComponent } from './pages/login/login.component';
-import { NewBookingComponent } from './pages/new-booking/new-booking.component';
+import { NewCustomerComponent } from './pages/new-customer/new-customer.component';
 import { RoomsComponent } from './pages/rooms/rooms.component';
 import { UsersComponent } from './pages/users/users.component';
+import { NewBookingComponent } from './pages/new-booking/new-booking.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +25,11 @@ import { UsersComponent } from './pages/users/users.component';
     BookingListComponent,
     DashboardComponent,
     LayoutComponent,
-    NewBookingComponent,
     RoomsComponent,
     UsersComponent,
     CustomerComponent,
+    NewCustomerComponent,
+    NewBookingComponent
   ],
   imports: [
     BrowserModule,
