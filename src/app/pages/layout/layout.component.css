@@ -24,14 +24,16 @@ img {
   padding-left: 0.2cm;
 }
 
-
+.mr {
+  margin-left: 0.5cm;
+}
 
 @media (max-width: 991px) {
   .home {
     padding-left: 0;
   }
 
-  .imglogo {
+  .imglogo{
     padding-left: 0;
   }
 
