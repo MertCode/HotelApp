@@ -28,12 +28,67 @@ img {
   margin-left: 0.5cm;
 }
 
+.gradientnav {
+  background: linear-gradient(to right, #4776e6, #8e54e9 51%, #4776e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 25px;
+  margin-right: 30px;
+  transition: 0.5s;
+  display: block;
+  cursor: none;
+}
+
+.gradientnav:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.btncolor {
+  background-image: linear-gradient(
+    to right,
+    #4776e6 0%,
+    #8e54e9 51%,
+    #4776e6 100%
+  );
+  margin: 10px;
+  padding: 6px 30px;
+
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 0 px #eee;
+  border-radius: 10px;
+  display: block;
+  /* width: 150px;
+  height: 40px; */
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.btncolor:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-item2 {
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  font-size: 18px;
+}
+
 @media (max-width: 991px) {
   .home {
     padding-left: 0;
   }
 
-  .imglogo{
+  .imglogo {
     padding-left: 0;
   }
 
