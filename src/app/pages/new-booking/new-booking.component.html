@@ -1,160 +1,131 @@
-<div class="container">
-  <h4>New Booking</h4>
-  <div class="row">
-    <div class="col-8">
-      <div class="row">
-        <div class="col-3">
-          <label>Name</label>
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="bookingObj.name"
-          />
-        </div>
-        <div class="col-3">
-          <label>Mobile</label>
-          <input
-            type="number"
-            class="form-control"
-            [(ngModel)]="bookingObj.mobileNo"
-          />
-        </div>
-        <div class="col-3">
-          <label>Email</label>
-          <input
-            type="email"
-            class="form-control"
-            [(ngModel)]="bookingObj.email"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-3">
-          <label>Nationial ID Number</label>
-          <input
-            type="number"
-            class="form-control"
-            [(ngModel)]="bookingObj.nationalIdNumber"
-          />
-        </div>
-        <div class="col-3">
-          <label>City</label>
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="bookingObj.city"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-6">
-          <label>Address </label>
-          <textarea
-            class="form-control"
-            [(ngModel)]="bookingObj.address"
-          ></textarea>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-3">
-          <label>Select Room</label>
-          <select class="form-control" [(ngModel)]="bookingObj.roomId">
-            <option>Select Room</option>
-            <option *ngFor="let room of roomList" [value]="room.id">
-              {{ room.roomName }}
-            </option>
-          </select>
-        </div>
-        <div class="col-3">
-          <label>Room Price</label>
-          <input
-            type="number"
-            class="form-control"
-            [(ngModel)]="bookingObj.bookingRate"
-          />
-        </div>
-        <div class="col-3">
-          <label>Check-In Date</label>
-          <input
-            type="datetime-local"
-            class="form-control"
-            [(ngModel)]="bookingObj.bookingFromDate"
-          />
-        </div>
-        <div class="col-3">
-          <label>Check-Out Date</label>
-          <input
-            type="datetime-local"
-            class="form-control"
-            [(ngModel)]="bookingObj.bookingToDate"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-6">
-          <label>Booking Extra Details </label>
-          <textarea
-            class="form-control"
-            [(ngModel)]="bookingObj.naration"
-          ></textarea>
-        </div>
-      </div>
-    </div>
-    <!-- <div class="col-4">
-      <div class="row">
-        <div class="col-6 guestdetails">
-          <h6>Guest Details</h6>
-        </div>
-        <div class="col-6 mr text-end">
-          <button class="btn btn-sm text-end black" (click)="addGuest()">
-            Add Guest
-          </button>
-        </div>
-      </div>
-      <div class="row pt-2">
-        <div class="col-12">
-          <table class="table table-bordered">
-            <tbody>
-              <tr
-                *ngFor="
-                  let guest of bookingObj.hotelBookingDetails;
-                  let index = index
-                "
+<body>
+  <div class="container">
+    <div class="title">Booking Registration - CloudBooking</div>
+    <div class="content">
+      <div action="#" class="div123">
+        <div class="user-details">
+          <div class="input-box">
+            <span name="name" class="details">Full Name</span>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              class="form-control"
+              [(ngModel)]="bookingObj.name"
+              name="name"
+            />
+          </div>
+          <div class="input-box">
+            <span name="mobileNo" class="details">Mobile</span>
+            <input
+              type="number"
+              placeholder="Enter your mobile number"
+              class="form-control"
+              [(ngModel)]="bookingObj.mobileNo"
+              name="mobileNo"
+            />
+          </div>
+          <div class="input-box">
+            <span name="email" class="details">Email</span>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="form-control"
+              [(ngModel)]="bookingObj.email"
+              name="email"
+            />
+          </div>
+          <div class="input-box">
+            <span name="nationalIdNumber" class="details"
+              >National ID number</span
+            >
+            <input
+              type="number"
+              placeholder="Enter your ID number"
+              class="form-control"
+              [(ngModel)]="bookingObj.nationalIdNumber"
+              name="nationalIdNumber"
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">City</span>
+            <input
+              type="text"
+              placeholder="Enter your city"
+              class="form-control"
+              [(ngModel)]="bookingObj.city"
+              name="city"
+            />
+          </div>
+          <div class="input-box">
+            <span name="address" class="details">Address</span>
+            <textarea
+              class="form-control"
+              [(ngModel)]="bookingObj.address"
+              name="address"
+            ></textarea>
+          </div>
+          <div class="input-box">
+            <label>Select Room</label>
+            <select class="form-control" [(ngModel)]="bookingObj.roomId">
+              <option>Select Room</option>
+              <option
+                name="roomId"
+                *ngFor="let room of roomList"
+                [value]="room.id"
               >
-                <td>
-                  <input
-                    type="text"
-                    class="form-control"
-                    [(ngModel)]="guestObj.name"
-                    placeholder="Guest Name"
-                  />
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    class="form-control"
-                    [(ngModel)]="guestObj.nationalIdNumber"
-                    placeholder="ID #"
-                  />
-                </td>
-                <td>
-                  <button class="btn btn-success" (click)="removeGuest(index)">
-                    Remove
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                {{ room.roomName }} - {{ room.roomTariff }}
+              </option>
+            </select>
+          </div>
+          <div class="input-box">
+            <label>Payment Method</label>
+            <select
+              class="form-control"
+              name="paymentMethod"
+              [(ngModel)]="bookingObj.paymentMethod"
+            >
+              <option name="cash" value="Cash">Cash</option>
+              <option name="card" value="Card">Credit Card</option>
+              <option name="cheque" value="Cheque">Cheque</option>
+            </select>
+          </div>
+          <div class="input-box">
+            <label>Check-In Date</label>
+            <input
+              type="datetime-local"
+              class="form-control"
+              [(ngModel)]="bookingObj.bookingFromDate"
+              name="bookingFromDate"
+            />
+          </div>
+          <div class="input-box">
+            <label>Check-Out Date</label>
+            <input
+              type="datetime-local"
+              class="form-control"
+              [(ngModel)]="bookingObj.bookingToDate"
+              name="bookingToDate"
+            />
+          </div>
+          <div class="input-box">
+            <label>Booking Extra Details </label>
+            <textarea
+              class="form-control"
+              [(ngModel)]="bookingObj.naration"
+              name="naration"
+            ></textarea>
+          </div>
         </div>
-      </div>
-    </div>
-  </div> -->
-    <div class="row pt-3">
-      <div class="col-8">
-        <button class="btn btn-success" (click)="createBooking()">
-          Create New Booking
-        </button>
+
+        <div class="button">
+          <input
+            (click)="createBooking()"
+            type="submit"
+            value="Register Booking"
+            name="register"
+          />
+        </div>
       </div>
     </div>
   </div>
-</div>
+</body>
