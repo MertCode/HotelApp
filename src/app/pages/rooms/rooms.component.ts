@@ -3,6 +3,16 @@ import { Route, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { RoomService } from 'src/app/service/room.service';
 
+interface Room {
+  roomId: number;
+  roomName: string;
+  isAcAvailable: boolean;
+  roomCapacity: number;
+  isActive: boolean;
+  roomTariff: string;
+  extensionNo: string;
+}
+
 @Component({
   selector: 'app-rooms',
   templateUrl: './rooms.component.html',
@@ -10,13 +20,13 @@ import { RoomService } from 'src/app/service/room.service';
 })
 export class RoomsComponent implements OnInit {
   roomList: any[] = [];
-  roomObj: any = {
+  roomObj: Room = {
     roomId: 0,
     roomName: '',
     isAcAvailable: false,
     roomCapacity: 0,
     isActive: false,
-    roomTariff: 0,
+    roomTariff: '',
     extensionNo: '',
   };
   constructor(
@@ -42,7 +52,7 @@ export class RoomsComponent implements OnInit {
       isAcAvailable: false,
       roomCapacity: 0,
       isActive: false,
-      roomTariff: 0,
+      roomTariff: '',
       extensionNo: '',
     };
     this.roomList.push(obj);
