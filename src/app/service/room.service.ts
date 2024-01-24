@@ -93,4 +93,18 @@ export class RoomService {
       method: 'DELETE',
     });
   }
-}
+
+  createNewCustomer(customerDetails: any) {
+    console.log(JSON.stringify(customerDetails));
+    return fetch(this.apiEndPoint2 + 'customers/', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify(customerDetails),
+    })
+  }
+  }
+
+
+
