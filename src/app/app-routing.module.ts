@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookingListComponent } from './pages/booking-list/booking-list.component';
-import { CustomerComponent } from './pages/customer/customer.component';
+import { CustomerComponent } from './pages/customer-list/customer.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NewBookingComponent } from './pages/new-booking/new-booking.component';

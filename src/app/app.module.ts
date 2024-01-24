@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookingCalendarComponent } from './pages/booking-calendar/booking-calendar.component';
 import { BookingListComponent } from './pages/booking-list/booking-list.component';
-import { CustomerComponent } from './pages/customer/customer.component';
+import { CustomerComponent } from './pages/customer-list/customer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { LoginComponent } from './pages/login/login.component';
