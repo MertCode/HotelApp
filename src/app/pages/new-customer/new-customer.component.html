@@ -1,67 +1,96 @@
-<div class="container">
-    <h4>New Customer</h4>
-    <div class="row">
-      <div class="col-8">
-        <div class="row">
-          <div class="col-3">
-            <label>Name</label>
+<body>
+    <div class="container">
+      <div class="title">Customer Registration - CloudBooking</div>
+      <div class="content">
+        <form action="#">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Full Name</span>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                class="form-control"
+                [(ngModel)]="customerObj.name"
+                name="name"
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Mobile</span>
+              <input
+                type="number"
+                placeholder="Enter your mobile number"
+                class="form-control"
+                [(ngModel)]="customerObj.mobileNo"
+                name="mobileNo"
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">Email</span>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="form-control"
+                [(ngModel)]="customerObj.email"
+                name="email"
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">National ID number</span>
+              <input
+                type="number"
+                placeholder="Enter your ID number"
+                class="form-control"
+                [(ngModel)]="customerObj.nationalIdNumber"
+                name="nationalIdNumber"
+              />
+            </div>
+            <div class="input-box">
+              <span class="details">City</span>
+              <input
+                type="text"
+                placeholder="Enter your city"
+                class="form-control"
+                [(ngModel)]="customerObj.city"
+                name="city"
+              />
+            </div>
+            <div class="input-box">
+              <span>Address </span>
+              <textarea
+                class="form-control"
+                [(ngModel)]="customerObj.address"
+                name="address"
+              ></textarea>
+            </div>
+          </div>
+          <div class="gender-details">
+            <input type="radio" name="gender" id="dot-1" />
+            <input type="radio" name="gender" id="dot-2" />
+            <input type="radio" name="gender" id="dot-3" />
+            <span class="gender-title">Gender</span>
+            <div class="category">
+              <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="gender">Male</span>
+              </label>
+              <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="gender">Female</span>
+              </label>
+              <label for="dot-3">
+                <span class="dot three"></span>
+                <span class="gender">Prefer not to say</span>
+              </label>
+            </div>
+          </div>
+          <div class="button">
             <input
-              type="text"
-              class="form-control"
-              [(ngModel)]="customerObj.name"
+              (click)="createCustomer()"
+              type="submit"
+              value="Register Customer"
             />
           </div>
-          <div class="col-3">
-            <label>Phone</label>
-            <input
-              type="number"
-              class="form-control"
-              [(ngModel)]="customerObj.mobileNo"
-            />
-          </div>
-          <div class="col-3">
-            <label>Email</label>
-            <input
-              type="email"
-              class="form-control"
-              [(ngModel)]="customerObj.email"
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-3">
-            <label>Nationial ID Number</label>
-            <input
-              type="number"
-              class="form-control"
-              [(ngModel)]="customerObj.nationalIdNumber"
-            />
-          </div>
-          <div class="col-3">
-            <label>City</label>
-            <input
-              type="text"
-              class="form-control"
-              [(ngModel)]="customerObj.city"
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">
-            <label>Address </label>
-            <textarea
-              class="form-control"
-              [(ngModel)]="customerObj.address"
-            ></textarea>
-          </div>
-        </div>
-      <div class="row pt-3">
-        <div class="col-8">
-          <button class="btn btn-success" (click)="createCustomer()">
-            Create New Customer
-          </button>
-        </div>
+        </form>
       </div>
     </div>
-  </div>
-  
+  </body>
