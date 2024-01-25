@@ -3,14 +3,19 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { RoomService } from 'src/app/service/room.service';
 
+interface Login {
+  userName: string;
+  password: string;
+}
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  loginObj: any = {
-    login: '',
+  loginObj: Login = {
+    userName: '',
     password: '',
   };
   constructor(
@@ -23,7 +28,7 @@ export class LoginComponent {
     this.roomSrv.login(this.loginObj).then((res) => {
       if (res) {
         this.toaster.success('Login successful!');
-        this.router.navigateByUrl('/rooms');
+        this.router.navigateByUrl('/bookings');
       } else {
         this.toaster.error(res);
       }

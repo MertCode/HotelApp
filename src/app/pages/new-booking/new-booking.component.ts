@@ -15,6 +15,7 @@ interface Booking {
   bookingRate: number;
   naration: string;
   roomId: number;
+  paymentMethod: string;
 }
 
 @Component({
@@ -35,6 +36,7 @@ export class NewBookingComponent implements OnInit {
     bookingToDate: '',
     bookingRate: 0,
     naration: '',
+    paymentMethod: '',
   };
 
   guestObj = {

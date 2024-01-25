@@ -10,7 +10,6 @@ interface Customer {
   nationalIdNumber: string;
   city: string;
   address: string;
-  
 }
 
 @Component({
@@ -36,17 +35,18 @@ export class NewCustomerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
-  
-createCustomer() {
-  this.roomSrv
-    .createNewCustomer(this.customerObj)
-    .then((res) => {
-      this.toaster.success('Customer Created Successfully');
-      this.router.navigate(['/customer']);
-    })
-    .catch((err) => {
-      console.log(err);
-    })
 
-}
+  createCustomer() {
+    console.log(this.customerObj); // Check the console for the logged data
+
+    this.roomSrv
+      .createNewCustomer(this.customerObj)
+      .then((res) => {
+        this.toaster.success('Customer Created Successfully');
+        this.router.navigate(['/customer']);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 }
