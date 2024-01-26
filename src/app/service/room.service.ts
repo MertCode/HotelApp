@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class RoomService {
-  apiEndPoint2: string = 'http://localhost:8000/api/';
+  apiUrl: string = 'http://localhost:8000/api/';
 
   constructor(private http: HttpClient) {}
 
@@ -23,13 +23,13 @@ export class RoomService {
   }
 
   getAllRooms() {
-    return fetch(this.apiEndPoint2 + 'rooms').then((res) => res.json());
+    return fetch(this.apiUrl + 'rooms').then((res) => res.json());
   }
 
   updateRoom(roomList: any) {
     console.log(JSON.stringify(roomList));
 
-    return fetch(this.apiEndPoint2 + 'rooms/', {
+    return fetch(this.apiUrl + 'rooms/', {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -39,21 +39,21 @@ export class RoomService {
   }
 
   deleteRoom(id: any) {
-    return fetch(this.apiEndPoint2 + 'rooms/' + id, {
+    return fetch(this.apiUrl + 'rooms/' + id, {
       method: 'DELETE',
     });
   }
 
   getAllCustomers() {
-    return fetch(this.apiEndPoint2 + 'customers').then((res) => res.json());
+    return fetch(this.apiUrl + 'customers').then((res) => res.json());
   }
 
   getAllEmployees() {
-    return fetch(this.apiEndPoint2 + 'employees/').then((res) => res.json());
+    return fetch(this.apiUrl + 'employees/').then((res) => res.json());
   }
 
   addEmployee(obj: any) {
-    return fetch(this.apiEndPoint2 + 'employees/', {
+    return fetch(this.apiUrl + 'employees/', {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -63,17 +63,17 @@ export class RoomService {
   }
 
   deleteEmployee(id: any) {
-    return fetch(this.apiEndPoint2 + 'employees/' + id, {
+    return fetch(this.apiUrl + 'employees/' + id, {
       method: 'DELETE',
     });
   }
 
   getAllBookings() {
-    return fetch(this.apiEndPoint2 + 'bookings').then((res) => res.json());
+    return fetch(this.apiUrl + 'bookings').then((res) => res.json());
   }
 
   deleteBooking(id: number) {
-    return fetch(this.apiEndPoint2 + 'bookings/' + id, {
+    return fetch(this.apiUrl + 'bookings/' + id, {
       method: 'DELETE',
     });
   }
@@ -81,7 +81,7 @@ export class RoomService {
   createBooking(bookingDetails: any) {
     console.log(JSON.stringify(bookingDetails));
 
-    return fetch(this.apiEndPoint2 + 'bookings/', {
+    return fetch(this.apiUrl + 'bookings/', {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -90,14 +90,14 @@ export class RoomService {
     });
   }
   deleteCustomer(id: number) {
-    return fetch(this.apiEndPoint2 + 'customers/' + id, {
+    return fetch(this.apiUrl + 'customers/' + id, {
       method: 'DELETE',
     });
   }
 
   createNewCustomer(customerDetails: any) {
     console.log(JSON.stringify(customerDetails));
-    return fetch(this.apiEndPoint2 + 'customers/', {
+    return fetch(this.apiUrl + 'customers/', {
       headers: {
         'Content-Type': 'application/json',
       },
