@@ -15,14 +15,14 @@ export class LayoutComponent {
     private router: Router,
     private RoomSrv: RoomService,
     private toaster: ToastrService
-  ) {
-    const localData = localStorage.getItem('hotelUser');
-    if (localData != null) {
-      this.loggedUserData = JSON.parse(localData);
-    }
+  ) {}
+
+  async ngOnInit() {
+    this.loggedUserData = JSON.parse(localStorage.getItem('token') as string);
   }
+
   onLogOff() {
-    localStorage.removeItem('hotelUser');
+    localStorage.removeItem('token');
     this.loggedUserData = undefined;
     this.router.navigateByUrl('/login');
     this.toaster.success('Logged out successfully');

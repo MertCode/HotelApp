@@ -5,20 +5,21 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class RoomService {
-  apiEndPoint1: string =
-    'https://freeapi.miniprojectideas.com/api/HotelBooking/';
   apiEndPoint2: string = 'http://localhost:8000/api/';
 
   constructor(private http: HttpClient) {}
 
-  login(obj: any) {
-    return fetch(this.apiEndPoint2 + 'employees', {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-      body: JSON.stringify(obj),
-    });
+  async login(username: string, password: string) {
+    let users = await this.getAllEmployees();
+
+    let user = users.find(
+      (u: { userName: string; password: string }) => u.userName === username
+    );
+
+    if (user.password === password) {
+      return user;
+    }
+    return null;
   }
 
   getAllRooms() {
@@ -102,9 +103,6 @@ export class RoomService {
       },
       method: 'POST',
       body: JSON.stringify(customerDetails),
-    })
+    });
   }
-  }
-
-
-
+}

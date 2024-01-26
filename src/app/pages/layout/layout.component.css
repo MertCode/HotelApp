@@ -9,6 +9,14 @@ h6 {
   margin-top: 0.35cm;
   margin-right: 0.6cm;
 }
+.loggedUserName {
+  margin: 0;
+  padding-right: 20px;
+  color: white;
+  font-size: 22px;
+  vertical-align: 100%;
+  text-decoration: solid;
+}
 
 img {
   width: 70px;

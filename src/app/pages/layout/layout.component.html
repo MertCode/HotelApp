@@ -39,6 +39,10 @@
           <a class="nav-link" routerLink="/customer">Customers</a>
         </li>
       </ul>
+
+      <div class="loggedUserName">
+        {{ loggedUserData?.userName }}
+      </div>
       <form class="d-flex">
         <button class="btn btncolor" type="button" (click)="onLogOff()">
           Logout
