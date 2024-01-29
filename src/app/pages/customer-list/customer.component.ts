@@ -18,6 +18,8 @@ export class CustomerComponent implements OnInit {
       this.customerList = res;
     });
   }
+
+  
   deleteCustomer(id: number) {
     this.roomSrv.deleteCustomer(id).then((res: any) => {
       if (res) {

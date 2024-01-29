@@ -25,7 +25,7 @@ export class LoginComponent {
       localStorage.setItem('token', JSON.stringify(token));
       this.toaster.success('You have successfully logged in!');
       // Redirect to protected component
-      this.router.navigate(['/newBooking']);
+      this.router.navigate(['/newCustomer']);
     } else {
       this.toaster.warning('Wrong credentials!');
     }

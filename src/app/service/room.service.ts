@@ -19,7 +19,6 @@ export class RoomService {
     if (user.password === password) {
       return user;
     }
-    return null;
   }
 
   getAllRooms() {
